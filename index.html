@@ -1,214 +1,337 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
-    <title>Home</title>
-    <style type="text/css">
-      body {
-        background-color: #4a281c;
-        background-image: url("HomeBackground.png");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: contain;
-        background-position: center center;
-        margin: 0px;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      @font-face {
-        font-family: "UD Digi Kyokasho";
-        src: url("UD Digi Kyokasho NP-B.ttf");
-      }
-      
-      .CenterImage {
-        display: block;
-        width: 550px;
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
 
-      .MenuPanelButton {
-        position: absolute;
-        left: 25px;
-        top: 50%;
-        transform: translateY(-50%) rotate(0deg);
-        width: 50px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        z-index: 10;
-      }
+<style>
+:root {
+  --hex-size: clamp(70px, 10vw, 140px);
+  --hex-gap: clamp(8px, 1.5vw, 18px);
+}
 
-      .MenuPanel{
-        position: fixed;
-        top: 0;
-        right: calc(-20% + 25px);
-        width: calc(20% + 75px);
-        height: 100%;
-        background: url("MenuPanelBackground.png") no-repeat right/contain;
-        background-color: #4a281c ;
-        transition: 0.4s;
-        box-shadow: 2px 2px 15px 0px #C95103
-      }
+/* =========================
+   BASE LAYOUT
+========================= */
 
-      .MenuPanel.active{
-        right: 0;
-      }
+body {
+  background-color: #4a281c;
+  background-image: url("HomeBackground.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
 
-      .MenuPanel.active .MenuPanelButton {
-        transform: translateY(-50%) rotate(180deg);
-      }
+  margin: 0;
+  height: 100vh;
 
-      .HexGrid {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        z-index: 1;
-        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        overflow: auto;
-        padding: 25px 0;
-        padding-top: 0;
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-      .HexBrown {
-        position: relative;
-        
-        width: clamp(120px, 40%, 220px);
-        height: clamp(120px, 40%, 220px);
-        
-        background: url("HexFilledBrown.png") no-repeat center/contain;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        font-family: "UD Digi Kyokasho NP-B";
-        color: white;
-        font-size: 20px;
-        
-        cursor: pointer;
-        text-decoration: none;
-        
-        text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-      }
+/* =========================
+   FONT
+========================= */
 
-      .HexOrange {
-        position: relative;
-        
-        width: clamp(100px, 40%, 220px);
-        height: clamp(100px, 40%, 220px);
-        
-        background: url("HexFilledOrange.png") no-repeat center/contain;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        font-family: "UD Digi Kyokasho NP-B";
-        color: white;
-        font-size: 20px;
-        
-        cursor: pointer;
-        text-decoration: none;
-        
-        text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-      }
+@font-face {
+  font-family: "UD Digi Kyokasho";
+  src: url("UD Digi Kyokasho NP-B.ttf");
+}
 
-      .Left {
-        left: 130px;
-      }
+/* =========================
+   CENTER PIECE
+========================= */
 
-      .Right {
-        right: 15px;
-      }
-      
-      .Name {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translate(-80%, 100%);
-        
-        font-family: "UD Digi Kyokasho NP-B";
-        color: white;
-        font-size: 45px;
-        text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-      }
-      
-      .JobTitle {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        transform: translate(90%, -80%);
-        
-        font-family: "UD Digi Kyokasho NP-B";
-        color: white;
-        font-size: 45px;
-        text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-      }
-      
-      .CenterPiece {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        position: relative;
-        display: inline-block;
-      }
-      
-</style></head>
-  <body> <!-- Pic of Me -->
-    <div class="CenterPiece">
-    	<div class="CenterImage">
-      	<img src="PicOfMe.png" width="550">
-    	</div>
-    
-    	<!-- Name -->
-    	<div class="Name">Enkel Cipa</div>
-    
-    	<!-- Job Title -->
-    	<div class="JobTitle">Gameplay and<br>Technical Designer</div>  
-    </div>
-    
-    
-    <!-- Menu Panel -->
-    <div id="MenuPanel" class="MenuPanel">
-      <!-- Menu Panel Button --> <img src="MenuPanelButton.png" class="MenuPanelButton"
+.CenterPiece {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
 
-        onclick="toggleMenu()">
-      <div class="HexGrid"> <a href="index.html" class="HexBrown Left">Home</a>
-        <a href="Projects.html" class="HexOrange Right">Projects</a> <a href="About.html"
+.CenterImage img {
+  width: clamp(200px, 50vw, 550px);
+  height: auto;
+}
 
-          class="HexBrown Left">About</a> <a href="https://www.linkedin.com/in/enkel-cipa/"
+/* =========================
+   MENU PANEL
+========================= */
 
-          target="_blank" class="HexBrown Right">LinkedIn</a> <a href="" class="HexOrange Left">CV</a>
+.MenuPanel {
+  width: 420px;
+  max-width: 90vw;
+  height: 100vh;
+
+  background: url("MenuPanelBackground.png") no-repeat center/cover;
+  background-color: #4a281c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   HONEYCOMB GRID
+========================= */
+
+.HexGrid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: var(--hex-gap);
+}
+
+/* =========================
+   HEX COLUMNS
+========================= */
+
+.hex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hex-gap);
+
+  justify-content: flex-start;
+}
+
+/* =========================
+   HONEYCOMB STAGGER
+========================= */
+
+.hex-col.offset {
+  margin-top: calc((var(--hex-size) + var(--hex-gap)) / 2);
+}
+
+/* =========================
+   HEX TILES
+========================= */
+
+.HexBrown,
+.HexOrange {
+  width: var(--hex-size);
+  height: var(--hex-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  font-family: "UD Digi Kyokasho";
+  color: white;
+  font-size: clamp(12px, 2.5vw, 20px);
+  text-decoration: none;
+
+  text-shadow:
+    -3px -3px 5px #4A281C,
+     3px -3px 5px #4A281C,
+    -3px  3px 5px #4A281C,
+     3px  3px 5px #4A281C;
+
+  transition: transform 0.2s ease;
+}
+
+.HexBrown { background-image: url("HexFilledBrown.png"); }
+.HexOrange { background-image: url("HexFilledOrange.png"); }
+
+.HexBrown:hover,
+.HexOrange:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   SLIDING MENU
+========================= */
+
+.SlidingContainer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+
+  transition: right 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1000;
+}
+
+.SlidingContainer.active {
+  right: 0;
+}
+
+.HandleContainer {
+  width: 70px;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #4a281c;
+}
+
+.MenuPanelButton {
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.SlidingContainer.active .MenuPanelButton {
+  transform: rotate(180deg);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  /* =========================
+     PAGE LAYOUT SWITCH
+  ========================= */
+
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* =========================
+     CENTER PIECE BECOMES HEADER
+  ========================= */
+
+  .CenterPiece {
+    position: relative;
+    margin-top: 20px;
+    transform: none;
+  }
+
+  .Name,
+  .JobTitle {
+    position: static;
+    transform: none;
+    text-align: center;
+    font-size: clamp(16px, 5vw, 28px);
+  }
+
+  /* =========================
+     MENU BECOMES FULL WIDTH PANEL
+  ========================= */
+
+  .SlidingContainer {
+    width: 100%;
+    right: -100%;
+  }
+
+  .SlidingContainer.active {
+    right: 0;
+  }
+
+  .MenuPanel {
+    width: 100%;
+  }
+
+  /* =========================
+     HONEYCOMB BECOMES SIMPLE GRID
+  ========================= */
+
+  .HexGrid {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .hex-col {
+    margin-top: 0;
+    align-items: center;
+  }
+
+  .hex-col.offset {
+    margin-top: 0;
+  }
+
+  /* =========================
+     TOUCH OPTIMISATION
+  ========================= */
+
+  .HexBrown,
+  .HexOrange {
+    width: 120px;
+    height: 120px;
+    font-size: 16px;
+  }
+
+  /* =========================
+     OPTIONAL: REMOVE CENTER OVERLAP EFFECTS
+  ========================= */
+
+  body {
+    background-size: cover;
+    background-attachment: scroll;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     CENTER PIECE
+========================= -->
+
+<div class="CenterPiece">
+  <div class="CenterImage">
+    <img src="PicOfMe.png">
+  </div>
+</div>
+
+<!-- =========================
+     SLIDING MENU
+========================= -->
+
+<div id="SlidingContainer" class="SlidingContainer">
+
+  <div class="HandleContainer">
+    <img src="MenuPanelButton.png" class="MenuPanelButton" onclick="toggleMenu()">
+  </div>
+
+  <div class="MenuPanel">
+
+    <!-- =========================
+         HONEYCOMB MENU
+    ========================= -->
+
+    <div class="HexGrid">
+
+      <div class="hex-col">
+        <a href="index.html" class="HexBrown">Home</a>
+        <a href="About.html" class="HexBrown">About</a>
+        <a href="" class="HexBrown">CV</a>
       </div>
+
+      <div class="hex-col offset">
+        <a href="Projects.html" class="HexOrange">Projects</a>
+        <a href="LinkedIn" class="HexOrange">LinkedIn</a>
+      </div>
+
     </div>
-    <script>
-      function toggleMenu() {
-        document.getElementById("MenuPanel").classList.toggle("active");
-      }
-    </script>
-  </body>
+
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("SlidingContainer").classList.toggle("active");
+}
+</script>
+
+</body>
 </html>
