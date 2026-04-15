@@ -56,6 +56,44 @@ body {
 }
 
 /* =========================
+   NAME + TITLE (RESTORED STAGGERED STYLE)
+========================= */
+
+.Name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-80%, 100%);
+
+  font-family: "UD Digi Kyokasho";
+  color: white;
+  font-size: clamp(18px, 3vw, 45px);
+
+  text-shadow:
+    -3px -3px 5px #4A281C,
+     3px -3px 5px #4A281C,
+    -3px  3px 5px #4A281C,
+     3px  3px 5px #4A281C;
+}
+
+.JobTitle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(90%, -80%);
+
+  font-family: "UD Digi Kyokasho";
+  color: white;
+  font-size: clamp(18px, 3vw, 45px);
+
+  text-shadow:
+    -3px -3px 5px #4A281C,
+     3px -3px 5px #4A281C,
+    -3px  3px 5px #4A281C,
+     3px  3px 5px #4A281C;
+}
+
+/* =========================
    MENU PANEL
 ========================= */
 
@@ -79,7 +117,7 @@ body {
 .HexGrid {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 
   gap: var(--hex-gap);
 }
@@ -93,7 +131,7 @@ body {
   flex-direction: column;
   gap: var(--hex-gap);
 
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* =========================
@@ -101,7 +139,7 @@ body {
 ========================= */
 
 .hex-col.offset {
-  margin-top: calc((var(--hex-size) + var(--hex-gap)) / 2);
+  margin-top: calc(var(--hex-size) / 2);
 }
 
 /* =========================
@@ -191,67 +229,12 @@ body {
 
 @media (max-width: 768px) {
 
-  /* =========================
-     PAGE LAYOUT SWITCH
-  ========================= */
-
   body {
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: auto;
-    min-height: 100vh;
   }
-
-  /* =========================
-     CENTER PIECE BECOMES HEADER
-  ========================= */
-
-  .CenterPiece {
-    position: relative;
-    margin-top: 20px;
-    transform: none;
-  }
-
-  .Name,
-  .JobTitle {
-    position: static;
-    transform: none;
-    text-align: center;
-    font-size: clamp(16px, 5vw, 28px);
-  }
-
-  /* =========================
-     MENU BECOMES FULL WIDTH PANEL
-  ========================= */
-
-  .SlidingContainer {
-    width: 100%;
-    right: -100%;
-  }
-
-  .SlidingContainer.active {
-    right: 0;
-  }
-
-  .MenuPanel {
-    width: 100%;
-  }
-
-  /* =========================
-     HONEYCOMB BECOMES SIMPLE GRID
-  ========================= */
 
   .HexGrid {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .hex-col {
-    margin-top: 0;
-    align-items: center;
   }
 
   .hex-col.offset {
@@ -259,23 +242,15 @@ body {
   }
 
   /* =========================
-     TOUCH OPTIMISATION
+     NAME + TITLE MOBILE FIX
   ========================= */
 
-  .HexBrown,
-  .HexOrange {
-    width: 120px;
-    height: 120px;
-    font-size: 16px;
-  }
-
-  /* =========================
-     OPTIONAL: REMOVE CENTER OVERLAP EFFECTS
-  ========================= */
-
-  body {
-    background-size: cover;
-    background-attachment: scroll;
+  .Name,
+  .JobTitle {
+    position: static;
+    transform: none;
+    text-align: center;
+    font-size: clamp(16px, 5vw, 28px);
   }
 }
 </style>
@@ -291,6 +266,9 @@ body {
   <div class="CenterImage">
     <img src="PicOfMe.png">
   </div>
+
+  <div class="Name">Enkel Cipa</div>
+  <div class="JobTitle">Gameplay and<br>Technical Designer</div>
 </div>
 
 <!-- =========================
