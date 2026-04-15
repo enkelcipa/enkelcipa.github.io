@@ -1,27 +1,28 @@
-if (!window.__menuLoaded) {
-  window.__menuLoaded = true;
+if (!window.__MENU_INITIALIZED__) {
+  window.__MENU_INITIALIZED__ = true;
 
   fetch("menu.html")
     .then(res => res.text())
     .then(html => {
-      // Prevent duplicate injection
+      // HARD GUARANTEE: only inject once
       if (!document.getElementById("DesktopMenu") &&
           !document.getElementById("MobileMenu")) {
-        document.body.insertAdjacentHTML("beforeend", html);
+
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = html;
+        document.body.appendChild(wrapper);
       }
     });
 }
 
-// Desktop toggle
+// Safe toggles
 function toggleDesktopMenu() {
   const menu = document.getElementById("DesktopMenu");
   if (menu) menu.classList.toggle("active");
 }
 
-// Mobile toggle
 function toggleMobileMenu() {
   const menu = document.getElementById("MobileMenu");
   if (menu) menu.classList.toggle("active");
-
   document.body.classList.toggle("menu-open");
 }
