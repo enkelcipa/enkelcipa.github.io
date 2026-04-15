@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-
     <link rel="stylesheet" href="menu.css">
-
     <style>
 :root {
   --hex-size: clamp(70px, 10vw, 140px);
@@ -76,26 +74,17 @@ body.menu-open {
 }
     </style>
   </head>
-
   <body>
-
     <!-- PAGE CONTENT -->
     <div class="CenterPiece">
       <div class="Name">Enkel Cipa</div>
-      <div class="CenterImage">
-        <img src="PicOfMe.png">
-      </div>
-      <div class="JobTitle">
-        Gameplay and<br>
-        Technical Designer
-      </div>
+      <div class="CenterImage"> <img src="PicOfMe.png"> </div>
+      <div class="JobTitle"> Gameplay and<br>
+        Technical Designer </div>
     </div>
-
     <!-- REUSABLE MENU MOUNT POINT -->
     <div id="menu-container"></div>
-
     <!-- MENU SYSTEM SCRIPT -->
     <script src="menu.js"></script>
-
   </body>
 </html>
