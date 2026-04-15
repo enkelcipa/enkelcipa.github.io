@@ -1,152 +1,318 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>Projects</title>
-    <style type="text/css">
-      body {
-        background-color: #4a281c;
-        background-image: url("PageBackground.png");
-				background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: contain;
-        background-position: center center;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      @font-face {
-        font-family: "UD Digi Kyokasho";
-        src: url("UD Digi Kyokasho NP-B.ttf");
-      }
-      
-      .MenuPanelButton {
-        position: absolute;
-        left: 25px;
-        top: 50%;
-        transform: translateY(-50%) rotate(0deg);
-        width: 50px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        z-index: 10;
-      }
-      
-      .MenuPanel{
-        position: fixed;
-        top: 0;
-        right: calc(-25% + 25px);
-        width: calc(25% + 75px);
-        height: 100%;
-        background: url("MenuPanelBackground.png") no-repeat right/contain;
-        background-color: #4a281c ;
-        transition: 0.4s;
-        box-shadow: 2px 2px 15px 0px #C95103
-      }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects</title>
 
-      .MenuPanel.active{
-        right: 0;
-      }
+<style>
+:root {
+  --hex-size: clamp(70px, 10vw, 140px);
+  --hex-gap: clamp(8px, 1.5vw, 18px);
+  --handle-height: 70px;
+}
 
-      .MenuPanel.active .MenuPanelButton {
-        transform: translateY(-50%) rotate(180deg);
-      }
+/* =========================
+   GLOBAL FONT + TEXT STYLE
+========================= */
 
-      .HexGrid {
-        position: relative;
-        height: 100%;
-        width: 100%;
-        z-index: 1;
-      }
+@font-face {
+  font-family: "UD Digi Kyokasho";
+  src: url("UD Digi Kyokasho NP-B.ttf");
+}
 
-      .HexBrown {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: url("HexFilledBrown.png") no-repeat center/contain;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "UD Digi Kyokasho NP-B";
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        text-decoration: none;
-        text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-      }
+/* APPLY TO EVERYTHING */
+* {
+  font-family: "UD Digi Kyokasho", sans-serif;
+  color: white;
 
-      .HexOrange {
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        background: url("HexFilledOrange.png") no-repeat center/contain;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: "UD Digi Kyokasho NP-B";
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        text-decoration: none;
-        text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-      }
+  text-shadow:
+    -3px -3px 5px #4A281C,
+     3px -3px 5px #4A281C,
+    -3px  3px 5px #4A281C,
+     3px  3px 5px #4A281C;
+}
 
-      .Left {
-        left: 130px;
-      }
+/* =========================
+   BASE LAYOUT
+========================= */
 
-      .Right {
-        right: 15px;
-      }
+body {
+  background-color: #4a281c;
+  background-image: url("PageBackground.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
 
-      .HexGrid a:nth-child(1) { top: 10%; }
-      .HexGrid a:nth-child(2) { top: 25%; }
-      .HexGrid a:nth-child(3) { top: 40%; }
-      .HexGrid a:nth-child(4) { top: 55%; }
-      .HexGrid a:nth-child(5) { top: 70%; }
-      
-      .Title {
-        font-family: "UD Digi Kyokasho NP-B";
-        font-size: 40px;
-        text-align: center;
-        color: white;
-        text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-      
-</style></head>
-  <body>
-    <!-- Title Text -->
-    <div class="Title">
-      <h1>Projects</h1>
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.Title {
+  font-size: 40px;
+  text-align: center;
+}
+
+/* =========================
+   MENU SYSTEM (DESKTOP)
+========================= */
+
+.DesktopMenu {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+
+  transition: right 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1000;
+
+  /* SHADOW ATTACHED TO WHOLE SLIDING UNIT */
+  box-shadow: 2px 2px 15px 0px #C95103;
+}
+
+.DesktopMenu.active {
+  right: 0;
+}
+
+.DesktopHandle {
+  width: 70px;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #4a281c;
+}
+
+.MenuPanelButton {
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.DesktopMenu.active .MenuPanelButton {
+  transform: rotate(180deg);
+}
+
+/* PANEL */
+.MenuPanel {
+  width: 420px;
+  max-width: 90vw;
+  height: 100vh;
+
+  background: url("MenuPanelBackground.png") no-repeat center/cover;
+  background-color: #4a281c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   HEX GRID
+========================= */
+
+.HexGrid {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+/* DESKTOP HEXES */
+.HexBrown,
+.HexOrange {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+
+  font-size: 20px;
+}
+
+.HexBrown { background-image: url("HexFilledBrown.png"); }
+.HexOrange { background-image: url("HexFilledOrange.png"); }
+
+/* POSITIONING */
+.HexGrid a:nth-child(1) { top: 10%; }
+.HexGrid a:nth-child(2) { top: 25%; }
+.HexGrid a:nth-child(3) { top: 40%; }
+.HexGrid a:nth-child(4) { top: 55%; }
+.HexGrid a:nth-child(5) { top: 70%; }
+
+.Left { left: 130px; }
+.Right { right: 15px; }
+
+/* =========================
+   MOBILE SYSTEM
+========================= */
+
+.MobileHandle,
+.MobileMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+
+  /* HIDE DESKTOP */
+  .DesktopMenu {
+    display: none;
+  }
+
+  /* MOBILE HANDLE */
+  .MobileHandle {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--handle-height);
+
+    justify-content: center;
+    align-items: center;
+
+    background: #4a281c;
+    z-index: 3000;
+  }
+
+  .MobileHandle img {
+    width: 40px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+
+  .MobileMenu.active ~ .MobileHandle img {
+    transform: rotate(90deg);
+  }
+
+  /* MOBILE MENU */
+  .MobileMenu {
+    display: flex;
+    position: fixed;
+
+    top: var(--handle-height);
+    left: 0;
+
+    width: 100vw;
+    height: calc(100vh - var(--handle-height));
+
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 2000;
+    margin: 0;
+    padding: 0;
+  }
+
+  .MobileMenu.active {
+    transform: translateY(0);
+  }
+
+  .MobileMenu .MenuPanel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .HexGrid {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* MOBILE HEX SIZE (optional scaling baseline) */
+  .HexBrown,
+  .HexOrange {
+    width: 140px;
+    height: 140px;
+    font-size: 18px;
+  }
+
+  .Left { left: 10%; }
+  .Right { right: 10%; }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="Title">
+  <h1>Projects</h1>
+</div>
+
+<!-- DESKTOP MENU -->
+<div id="DesktopMenu" class="DesktopMenu">
+  <div class="DesktopHandle">
+    <img src="MenuPanelButton.png" class="MenuPanelButton" onclick="toggleMenu()">
+  </div>
+
+  <div class="MenuPanel">
+    <div class="HexGrid">
+      <a href="index.html" class="HexBrown Left">Home</a>
+      <a href="Projects.html" class="HexOrange Right">Projects</a>
+      <a href="About.html" class="HexBrown Left">About</a>
+      <a href="https://www.linkedin.com/in/enkel-cipa/" target="_blank" class="HexBrown Right">LinkedIn</a>
+      <a href="" class="HexOrange Left">CV</a>
     </div>
-    <!-- Menu Panel -->
-    <div id="MenuPanel" class="MenuPanel">
-      <!-- Menu Panel Button --> <img src="MenuPanelButton.png" class="MenuPanelButton"
+  </div>
+</div>
 
-        onclick="toggleMenu()">
-      <div class="HexGrid"> <a href="Home.html" class="HexBrown Left">Home</a>
-        <a href="Projects.html" class="HexOrange Right">Projects</a> <a href="About.html"
-
-          class="HexBrown Left">About</a> <a href="https://www.linkedin.com/in/enkel-cipa/"
-
-          target="_blank" class="HexBrown Right">LinkedIn</a> <a href="" class="HexOrange Left">CV</a>
-      </div>
+<!-- MOBILE MENU -->
+<div id="MobileMenu" class="MobileMenu">
+  <div class="MenuPanel">
+    <div class="HexGrid">
+      <a href="index.html" class="HexBrown">Home</a>
+      <a href="Projects.html" class="HexOrange">Projects</a>
+      <a href="About.html" class="HexBrown">About</a>
+      <a href="https://www.linkedin.com/in/enkel-cipa/" target="_blank" class="HexOrange">LinkedIn</a>
+      <a href="" class="HexBrown">CV</a>
     </div>
-    <script>
-      function toggleMenu() {
-        document.getElementById("MenuPanel").classList.toggle("active");
-      }
-    </script>
-    
-  </body>
+  </div>
+</div>
+
+<div class="MobileHandle">
+  <img src="MenuPanelButton.png" onclick="toggleMenu()">
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("DesktopMenu").classList.toggle("active");
+  document.getElementById("MobileMenu").classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+}
+</script>
+
+</body>
 </html>

@@ -1,0 +1,203 @@
+:root {
+  --hex-size: clamp(70px, 10vw, 140px);
+  --hex-gap: clamp(8px, 1.5vw, 18px);
+  --handle-height: 70px;
+}
+
+/* FONT */
+@font-face {
+  font-family: "UD Digi Kyokasho";
+  src: url("UD Digi Kyokasho NP-B.ttf");
+}
+
+* {
+  font-family: "UD Digi Kyokasho", sans-serif;
+  color: white;
+  text-shadow:
+    -3px -3px 5px #4A281C,
+     3px -3px 5px #4A281C,
+    -3px  3px 5px #4A281C,
+     3px  3px 5px #4A281C;
+}
+
+/* =========================
+   DESKTOP MENU
+========================= */
+
+.DesktopMenu {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+
+  transition: right 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1000;
+}
+
+.DesktopMenu.active {
+  right: 0;
+}
+
+/* HANDLE = part of sliding unit */
+.DesktopHandle {
+  width: 70px;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #4a281c;
+
+  /* ALWAYS ATTACHED SHADOW */
+  box-shadow: -10px 0 18px #C95103;
+}
+
+.MenuPanelButton {
+  width: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.DesktopMenu.active .MenuPanelButton {
+  transform: rotate(180deg);
+}
+
+/* PANEL */
+.MenuPanel {
+  width: 420px;
+  max-width: 90vw;
+  height: 100vh;
+
+  background: url("MenuPanelBackground.png") no-repeat center/cover;
+  background-color: #4a281c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GRID */
+.HexGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--hex-gap);
+}
+
+.hex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hex-gap);
+}
+
+.hex-col.offset {
+  margin-top: 0;
+}
+
+/* HEX */
+.HexBrown,
+.HexOrange {
+  width: var(--hex-size);
+  height: var(--hex-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.HexBrown { background-image: url("HexFilledBrown.png"); }
+.HexOrange { background-image: url("HexFilledOrange.png"); }
+
+/* =========================
+   MOBILE
+========================= */
+
+.MobileHandle,
+.MobileMenu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    overscroll-behavior: none;
+  }
+
+  body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+
+  .MobileHandle {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--handle-height);
+
+    justify-content: center;
+    align-items: center;
+
+    background: #4a281c;
+    z-index: 3000;
+
+    box-shadow: -10px 0 18px #C95103;
+  }
+
+  .MobileHandle img {
+    width: 40px;
+    transform: rotate(-90deg);
+  }
+
+  .MobileMenu.active ~ .MobileHandle img {
+    transform: rotate(90deg);
+  }
+
+  .MobileMenu {
+    display: flex;
+    position: fixed;
+
+    top: var(--handle-height);
+    left: 0;
+
+    width: 100vw;
+    height: calc(100vh - var(--handle-height));
+
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 2000;
+  }
+
+  .MobileMenu.active {
+    transform: translateY(0);
+  }
+
+  .MobileMenu .MenuPanel {
+    width: 100%;
+    height: 100%;
+  }
+
+  .HexGrid {
+    flex-direction: column;
+    --hex-size: clamp(90px, 20vw, 190px);
+  }
+}
