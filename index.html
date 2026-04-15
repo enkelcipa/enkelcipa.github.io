@@ -1,47 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
 
-<link rel="stylesheet" href="menu.css">
-<script defer src="menu.js"></script>
+    <link rel="stylesheet" href="menu.css">
 
-<style>
+    <style>
 :root {
   --hex-size: clamp(70px, 10vw, 140px);
   --hex-gap: clamp(8px, 1.5vw, 18px);
   --handle-height: 70px;
 }
 
-/* GLOBAL */
+/* FONT ONLY (menu handles global text now) */
 @font-face {
   font-family: "UD Digi Kyokasho";
   src: url("UD Digi Kyokasho NP-B.ttf");
 }
 
-* {
-  font-family: "UD Digi Kyokasho", sans-serif;
-  color: white;
-  text-shadow:
-    -3px -3px 5px #4A281C,
-     3px -3px 5px #4A281C,
-    -3px  3px 5px #4A281C,
-     3px  3px 5px #4A281C;
-}
+/* =========================
+   BASE LAYOUT
+========================= */
 
-/* BACKGROUND */
 body {
-  margin: 0;
-  min-height: 100vh;
-
   background-color: #4a281c;
   background-image: url("HomeBackground.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
   background-position: center;
+
+  margin: 0;
+  min-height: 100vh;
 
   display: flex;
   justify-content: center;
@@ -52,9 +44,13 @@ body.menu-open {
   overflow: hidden;
 }
 
-/* CENTER PIECE */
+/* =========================
+   CENTER PIECE
+========================= */
+
 .CenterPiece {
   position: relative;
+  display: inline-block;
   text-align: center;
 }
 
@@ -78,37 +74,28 @@ body.menu-open {
   transform: translate(90%, -80%);
   font-size: clamp(18px, 3vw, 45px);
 }
+    </style>
+  </head>
 
-/* MOBILE CENTER FIX */
-@media (max-width: 768px) {
-  .CenterPiece {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+  <body>
 
-  .Name, .JobTitle {
-    position: static;
-    transform: none;
-  }
+    <!-- PAGE CONTENT -->
+    <div class="CenterPiece">
+      <div class="Name">Enkel Cipa</div>
+      <div class="CenterImage">
+        <img src="PicOfMe.png">
+      </div>
+      <div class="JobTitle">
+        Gameplay and<br>
+        Technical Designer
+      </div>
+    </div>
 
-  .Name { margin-bottom: 30px; }
-  .JobTitle { margin-top: 30px; }
-}
-</style>
-</head>
+    <!-- REUSABLE MENU MOUNT POINT -->
+    <div id="menu-container"></div>
 
-<body>
+    <!-- MENU SYSTEM SCRIPT -->
+    <script src="menu.js"></script>
 
-<div class="CenterPiece">
-  <div class="Name">Enkel Cipa</div>
-  <div class="CenterImage">
-    <img src="PicOfMe.png">
-  </div>
-  <div class="JobTitle">Gameplay and<br>Technical Designer</div>
-</div>
-
-</body>
+  </body>
 </html>
