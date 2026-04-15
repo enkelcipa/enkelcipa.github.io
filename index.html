@@ -9,10 +9,32 @@
 :root {
   --hex-size: clamp(70px, 10vw, 140px);
   --hex-gap: clamp(8px, 1.5vw, 18px);
+  --handle-height: 70px;
 }
 
 /* =========================
-   BASE LAYOUT
+   GLOBAL FONT + TEXT STYLE
+========================= */
+
+@font-face {
+  font-family: "UD Digi Kyokasho";
+  src: url("UD Digi Kyokasho NP-B.ttf");
+}
+
+/* APPLY TO EVERYTHING */
+* {
+  font-family: "UD Digi Kyokasho", sans-serif;
+  color: white;
+
+  text-shadow:
+    -3px -3px 5px #4A281C,
+     3px -3px 5px #4A281C,
+    -3px  3px 5px #4A281C,
+     3px  3px 5px #4A281C;
+}
+
+/* =========================
+   BASE LAYOUT (DESKTOP)
 ========================= */
 
 body {
@@ -24,24 +46,19 @@ body {
   background-position: center;
 
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* =========================
-   FONT
-========================= */
-
-@font-face {
-  font-family: "UD Digi Kyokasho";
-  src: url("UD Digi Kyokasho NP-B.ttf");
+body.menu-open {
+  overflow: hidden;
 }
 
 /* =========================
-   CENTER PIECE
+   CENTER PIECE (DESKTOP)
 ========================= */
 
 .CenterPiece {
@@ -55,25 +72,12 @@ body {
   height: auto;
 }
 
-/* =========================
-   NAME + TITLE (RESTORED STAGGERED STYLE)
-========================= */
-
 .Name {
   position: absolute;
   top: 0;
   left: 0;
   transform: translate(-80%, 100%);
-
-  font-family: "UD Digi Kyokasho";
-  color: white;
   font-size: clamp(18px, 3vw, 45px);
-
-  text-shadow:
-    -3px -3px 5px #4A281C,
-     3px -3px 5px #4A281C,
-    -3px  3px 5px #4A281C,
-     3px  3px 5px #4A281C;
 }
 
 .JobTitle {
@@ -81,16 +85,7 @@ body {
   bottom: 0;
   right: 0;
   transform: translate(90%, -80%);
-
-  font-family: "UD Digi Kyokasho";
-  color: white;
   font-size: clamp(18px, 3vw, 45px);
-
-  text-shadow:
-    -3px -3px 5px #4A281C,
-     3px -3px 5px #4A281C,
-    -3px  3px 5px #4A281C,
-     3px  3px 5px #4A281C;
 }
 
 /* =========================
@@ -111,39 +106,28 @@ body {
 }
 
 /* =========================
-   HONEYCOMB GRID
+   HEX GRID
 ========================= */
 
 .HexGrid {
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: var(--hex-gap);
 }
-
-/* =========================
-   HEX COLUMNS
-========================= */
 
 .hex-col {
   display: flex;
   flex-direction: column;
   gap: var(--hex-gap);
-
-  justify-content: center;
 }
-
-/* =========================
-   HONEYCOMB STAGGER
-========================= */
 
 .hex-col.offset {
-  margin-top: calc(var(--hex-size) / 2);
+  margin-top: 0;
 }
 
 /* =========================
-   HEX TILES
+   HEX BUTTONS
 ========================= */
 
 .HexBrown,
@@ -159,16 +143,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 
-  font-family: "UD Digi Kyokasho";
-  color: white;
   font-size: clamp(12px, 2.5vw, 20px);
   text-decoration: none;
-
-  text-shadow:
-    -3px -3px 5px #4A281C,
-     3px -3px 5px #4A281C,
-    -3px  3px 5px #4A281C,
-     3px  3px 5px #4A281C;
 
   transition: transform 0.2s ease;
 }
@@ -182,10 +158,10 @@ body {
 }
 
 /* =========================
-   SLIDING MENU
+   DESKTOP MENU
 ========================= */
 
-.SlidingContainer {
+.DesktopMenu {
   position: fixed;
   top: 0;
   right: -420px;
@@ -198,17 +174,17 @@ body {
   z-index: 1000;
 }
 
-.SlidingContainer.active {
+.DesktopMenu.active {
   right: 0;
 }
 
-.HandleContainer {
+.DesktopHandle {
   width: 70px;
   height: 100vh;
 
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   background: #4a281c;
 }
@@ -219,38 +195,149 @@ body {
   transition: transform 0.3s ease;
 }
 
-.SlidingContainer.active .MenuPanelButton {
+.DesktopMenu.active .MenuPanelButton {
   transform: rotate(180deg);
 }
 
 /* =========================
-   MOBILE
+   MOBILE SYSTEM
 ========================= */
+
+.MobileHandle,
+.MobileMenu {
+  display: none;
+}
 
 @media (max-width: 768px) {
 
+  /* HARD LOCK SCROLL (IMPORTANT FIX) */
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    overscroll-behavior: none;
+  }
+
   body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: scroll;
+  }
+
+  /* CENTER PIECE MOBILE */
+  .CenterPiece {
+    display: flex;
     flex-direction: column;
-  }
+    align-items: center;
+    justify-content: center;
 
-  .HexGrid {
-    flex-direction: column;
-  }
+    transform: translateY(1.7vh);
 
-  .hex-col.offset {
-    margin-top: 0;
+    position: static;
+    width: 100%;
+    height: 100vh;
   }
-
-  /* =========================
-     NAME + TITLE MOBILE FIX
-  ========================= */
 
   .Name,
   .JobTitle {
     position: static;
     transform: none;
-    text-align: center;
-    font-size: clamp(16px, 5vw, 28px);
+  }
+
+  .Name {
+    margin-bottom: 30px;
+    font-size: clamp(26px, 6vw, 42px);
+  }
+
+  .JobTitle {
+    margin-top: 30px;
+    font-size: clamp(22px, 5vw, 36px);
+  }
+
+  /* HIDE DESKTOP */
+  .DesktopMenu {
+    display: none;
+  }
+
+  /* MOBILE HANDLE */
+  .MobileHandle {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: var(--handle-height);
+
+    justify-content: center;
+    align-items: center;
+
+    background: #4a281c;
+    z-index: 3000;
+  }
+
+  .MobileHandle img {
+    width: 40px;
+    transform: rotate(-90deg);
+    transition: transform 0.3s ease;
+  }
+
+  .MobileMenu.active ~ .MobileHandle img {
+    transform: rotate(90deg);
+  }
+
+  /* MOBILE MENU FULL WIDTH */
+  .MobileMenu {
+    display: flex;
+    position: fixed;
+
+    top: var(--handle-height);
+    left: 0;
+
+    width: 100vw;
+    height: calc(100vh - var(--handle-height));
+
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+    z-index: 2000;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .MobileMenu.active {
+    transform: translateY(0);
+  }
+
+  .MobileMenu .MenuPanel {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+  }
+
+  .HexGrid {
+    flex-direction: column;
+    --hex-size: clamp(110px, 20vw, 190px);
+  }
+
+  .hex-col.offset {
+    margin-top: 0;
+  }
+  
+  .MobileMenu .hex-col:nth-child(1) a:nth-child(1),
+  .MobileMenu .hex-col:nth-child(2) a:nth-child(2)
+  {
+    background-image: url("HexFilledOrange.png");
+  }
+  .MobileMenu .hex-col:nth-child(1) a:nth-child(2),
+  .MobileMenu .hex-col:nth-child(2) a:nth-child(1)
+  {
+    background-image: url("HexFilledBrown.png");
+  }
+  .MobileMenu .hex-col:nth-child(1) a:nth-child(3) {
+    background-image: url("HexFilledOrange.png");
   }
 }
 </style>
@@ -258,37 +345,22 @@ body {
 
 <body>
 
-<!-- =========================
-     CENTER PIECE
-========================= -->
-
 <div class="CenterPiece">
+  <div class="Name">Enkel Cipa</div>
   <div class="CenterImage">
     <img src="PicOfMe.png">
   </div>
-
-  <div class="Name">Enkel Cipa</div>
   <div class="JobTitle">Gameplay and<br>Technical Designer</div>
 </div>
 
-<!-- =========================
-     SLIDING MENU
-========================= -->
-
-<div id="SlidingContainer" class="SlidingContainer">
-
-  <div class="HandleContainer">
-    <img src="MenuPanelButton.png" class="MenuPanelButton" onclick="toggleMenu()">
+<!-- DESKTOP -->
+<div id="DesktopMenu" class="DesktopMenu">
+  <div class="DesktopHandle">
+    <img src="MenuPanelButton.png" class="MenuPanelButton" onclick="toggleDesktopMenu()">
   </div>
 
   <div class="MenuPanel">
-
-    <!-- =========================
-         HONEYCOMB MENU
-    ========================= -->
-
     <div class="HexGrid">
-
       <div class="hex-col">
         <a href="index.html" class="HexBrown">Home</a>
         <a href="About.html" class="HexBrown">About</a>
@@ -299,15 +371,41 @@ body {
         <a href="Projects.html" class="HexOrange">Projects</a>
         <a href="LinkedIn" class="HexOrange">LinkedIn</a>
       </div>
-
     </div>
-
   </div>
 </div>
 
+<!-- MOBILE -->
+<div id="MobileMenu" class="MobileMenu">
+  <div class="MenuPanel">
+    <div class="HexGrid">
+      <div class="hex-col">
+        <a href="index.html" class="HexBrown">Home</a>
+        <a href="About.html" class="HexBrown">About</a>
+        <a href="" class="HexBrown">CV</a>
+      </div>
+
+      <div class="hex-col offset">
+        <a href="Projects.html" class="HexOrange">Projects</a>
+        <a href="LinkedIn" class="HexOrange">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="MobileHandle">
+  <img src="MenuPanelButton.png" onclick="toggleMobileMenu()">
+</div>
+
 <script>
-function toggleMenu() {
-  document.getElementById("SlidingContainer").classList.toggle("active");
+function toggleDesktopMenu() {
+  document.getElementById("DesktopMenu").classList.toggle("active");
+}
+
+function toggleMobileMenu() {
+  const menu = document.getElementById("MobileMenu");
+  menu.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
 }
 </script>
 
