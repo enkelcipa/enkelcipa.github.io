@@ -4,20 +4,94 @@
   --handle-height: 70px;
 }
 
-/* FONT */
+/* =========================
+   GLOBAL FONT + TEXT STYLE
+========================= */
+
 @font-face {
   font-family: "UD Digi Kyokasho";
   src: url("UD Digi Kyokasho NP-B.ttf");
 }
 
+/* APPLY TO EVERYTHING */
 * {
   font-family: "UD Digi Kyokasho", sans-serif;
   color: white;
+
   text-shadow:
     -3px -3px 5px #4A281C,
      3px -3px 5px #4A281C,
     -3px  3px 5px #4A281C,
      3px  3px 5px #4A281C;
+}
+
+/* =========================
+   MENU PANEL
+========================= */
+
+.MenuPanel {
+  width: 420px;
+  max-width: 90vw;
+  height: 100vh;
+
+  background: url("MenuPanelBackground.png") no-repeat center/cover;
+  background-color: #4a281c;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   HEX GRID
+========================= */
+
+.HexGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--hex-gap);
+}
+
+.hex-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hex-gap);
+}
+
+.hex-col.offset {
+  margin-top: 0;
+}
+
+/* =========================
+   HEX BUTTONS
+========================= */
+
+.HexBrown,
+.HexOrange {
+  width: var(--hex-size);
+  height: var(--hex-size);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  font-size: clamp(12px, 2.5vw, 20px);
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
+}
+
+.HexBrown { background-image: url("HexFilledBrown.png"); }
+.HexOrange { background-image: url("HexFilledOrange.png"); }
+
+.HexBrown:hover,
+.HexOrange:hover {
+  transform: scale(1.05);
 }
 
 /* =========================
@@ -41,7 +115,6 @@
   right: 0;
 }
 
-/* HANDLE = part of sliding unit */
 .DesktopHandle {
   width: 70px;
   height: 100vh;
@@ -51,8 +124,7 @@
   align-items: center;
 
   background: #4a281c;
-
-  /* ALWAYS ATTACHED SHADOW */
+  
   box-shadow: -10px 0 18px #C95103;
 }
 
@@ -66,63 +138,8 @@
   transform: rotate(180deg);
 }
 
-/* PANEL */
-.MenuPanel {
-  position: relative;
-  width: 420px;
-  max-width: 90vw;
-  height: 100vh;
-
-  background: url("MenuPanelBackground.png") no-repeat center/cover;
-  background-color: #4a281c;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* GRID */
-.HexGrid {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--hex-gap);
-}
-
-.hex-col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--hex-gap);
-}
-
-.hex-col.offset {
-  margin-top: 0;
-}
-
-/* HEX */
-.HexBrown,
-.HexOrange {
-  width: var(--hex-size);
-  height: var(--hex-size);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.HexBrown { background-image: url("HexFilledBrown.png"); }
-.HexOrange { background-image: url("HexFilledOrange.png"); }
-
 /* =========================
-   MOBILE
+   MOBILE SYSTEM
 ========================= */
 
 .MobileHandle,
@@ -132,6 +149,7 @@
 
 @media (max-width: 768px) {
 
+  /* HARD LOCK SCROLL (IMPORTANT FIX) */
   html, body {
     height: 100%;
     width: 100%;
@@ -146,6 +164,40 @@
     background-attachment: scroll;
   }
 
+  /* CENTER PIECE MOBILE */
+  .CenterPiece {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: static;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .Name,
+  .JobTitle {
+    position: static;
+    transform: none;
+  }
+
+  .Name {
+    margin-bottom: 30px;
+    font-size: clamp(26px, 6vw, 42px);
+  }
+
+  .JobTitle {
+    margin-top: 30px;
+    font-size: clamp(22px, 5vw, 36px);
+  }
+
+  /* HIDE DESKTOP */
+  .DesktopMenu {
+    display: none;
+  }
+
+  /* MOBILE HANDLE */
   .MobileHandle {
     display: flex;
     position: fixed;
@@ -160,19 +212,21 @@
 
     background: #4a281c;
     z-index: 3000;
-
+    
     box-shadow: -10px 0 18px #C95103;
   }
 
   .MobileHandle img {
     width: 40px;
     transform: rotate(-90deg);
+    transition: transform 0.3s ease;
   }
 
   .MobileMenu.active ~ .MobileHandle img {
     transform: rotate(90deg);
   }
 
+  /* MOBILE MENU FULL WIDTH */
   .MobileMenu {
     display: flex;
     position: fixed;
@@ -187,6 +241,9 @@
     transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 
     z-index: 2000;
+
+    margin: 0;
+    padding: 0;
   }
 
   .MobileMenu.active {
@@ -195,6 +252,7 @@
 
   .MobileMenu .MenuPanel {
     width: 100%;
+    max-width: 100%;
     height: 100%;
   }
 
@@ -202,4 +260,21 @@
     flex-direction: column;
     --hex-size: clamp(90px, 20vw, 190px);
   }
-}
+
+  .hex-col.offset {
+    margin-top: 0;
+  }
+  
+  .MobileMenu .hex-col:nth-child(1) a:nth-child(1),
+  .MobileMenu .hex-col:nth-child(2) a:nth-child(2)
+  {
+    background-image: url("HexFilledOrange.png");
+  }
+  .MobileMenu .hex-col:nth-child(1) a:nth-child(2),
+  .MobileMenu .hex-col:nth-child(2) a:nth-child(1)
+  {
+    background-image: url("HexFilledBrown.png");
+  }
+  .MobileMenu .hex-col:nth-child(1) a:nth-child(3) {
+    background-image: url("HexFilledOrange.png");
+  }
