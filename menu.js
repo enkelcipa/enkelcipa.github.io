@@ -6,14 +6,16 @@ fetch("menu.html")
   });
 
 // Desktop toggle
-function toggleDesktopMenu() {
-  const menu = document.getElementById("DesktopMenu");
-  menu.classList.toggle("active");
+function toggleDesktopMenu()
+{
+	const menu = document.getElementById("DesktopMenu");
+	menu.classList.toggle("active");
 }
 
 // Mobile toggle
-function toggleMobileMenu() {
-  const menu = document.getElementById("MobileMenu");
-  menu.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
+function toggleMobileMenu()
+{
+	const menu = document.getElementById("MobileMenu");
+	menu.classList.toggle("active");
+	document.body.classList.toggle("menu-open");
 }
