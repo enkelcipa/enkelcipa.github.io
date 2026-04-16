@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="menu.css">
@@ -72,10 +72,69 @@ body.menu-open {
   transform: translate(90%, -80%);
   font-size: clamp(18px, 3vw, 45px);
 }
+  
+@media (max-width: 768px)
+{
+  body
+  {
+    background-size: cover;
+    background-attachment: scroll;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100dvh;
+    padding: 20px;
+  }
+
+  .CenterPiece
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .Name,
+  .JobTitle
+  {
+    position: static;
+    transform: none;
+    margin: 0;
+  }
+
+  .Name
+  {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+
+  .JobTitle
+  {
+    font-size: clamp(18px, 5vw, 26px);
+  }
+
+  .CenterImage
+  {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .CenterImage img
+  {
+    width: clamp(180px, 60vw, 280px);
+    height: auto;
+  }
+}
+}
     </style>
   </head>
-  <body>
-    <!-- PAGE CONTENT -->
+  <body> <!-- PAGE CONTENT -->
     <div class="CenterPiece">
       <div class="Name">Enkel Cipa</div>
       <div class="CenterImage"> <img src="PicOfMe.png"> </div>
