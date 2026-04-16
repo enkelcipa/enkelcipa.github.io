@@ -178,7 +178,6 @@
 		background-size: cover;
 		background-position: center;
 		background-attachment: scroll;
-		scroll-behavior: auto;
 	}
 	
 	body.menu-open
@@ -247,8 +246,6 @@
 
 		margin: 0;
 		padding: 0;
-		
-		outline: 3px solid red;
 	}
 
 	.MobileMenu.active
@@ -266,8 +263,6 @@
 		box-sizing: border-box;
 
 		position: relative;
-		
-		outline: 3px solid red;
 	}
 
 	.HexGrid
