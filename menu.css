@@ -246,9 +246,9 @@
 
 	.MobileMenu .MenuPanel
 	{
-		width: 100%;
+		width: 100dvh;
 		height: 100%;
-		max-width: none;
+		max-width: 100dvh;
 
 		position: relative;
 	}
