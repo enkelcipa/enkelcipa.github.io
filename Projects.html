@@ -12,7 +12,7 @@
   --handle-height: 70px;
 }
 
-/* FONT ONLY (menu handles global text now) */
+/* FONT ONLY */
 @font-face {
   font-family: "UD Digi Kyokasho";
   src: url("UD Digi Kyokasho NP-B.ttf");
@@ -25,7 +25,7 @@
 body {
   background-color: #4a281c;
   background-image: url("PageBackground.png");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: contain;
   background-position: center;
@@ -35,7 +35,7 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: top;
+  align-items: flex-start;
 }
 
 body.menu-open {
@@ -46,13 +46,30 @@ body.menu-open {
   overflow: hidden;
 }
 
+.Page
+{
+  width: 100%;
+  max-width: 1200px;
+  padding: 60px 20px 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 30px;
+}
+      
 /* =========================
    TITLE
 ========================= */
 .Title {
-  font-size: 40px;
   text-align: center;
-  margin-top: 40px;
+}
+      
+.Title h1 {
+  font-size: 80px;
+  margin: 0;
 }
       
 /* =========================
@@ -75,6 +92,17 @@ body.menu-open {
       
 .ProjectItem {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+}
+
+.ProjectItem a,
+.ProjectItem img,
+.ProjectText
+{
+  width: 100%;
+  max-width: 300px; /* match your image constraint */
 }
       
 .ProjectItem a{
@@ -99,6 +127,9 @@ body.menu-open {
 .ProjectText
 {
   margin-top: 12px;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .ProjectText h2
@@ -136,13 +167,52 @@ body.menu-open {
       </div>
       <!-- PROJECT GRID -->
       <div class="ProjectGrid">
-        <div class="ProjectItem">
-          <a href="Project1.html" alt="Project 1">
-            <img src="" alt="Project 1">
-          </a>
+        <!-- PROJECT 1 -->
+        <div class="ProjectItem"> <a href="Project1.html" alt="Project 1">
+          <img src="ProjectTemp.png" alt="Project 1"> </a>
           <div class="ProjectText">
             <h2>Project Name</h2>
-            <p>Short description of the project</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+          </div>
+        </div>
+        <!-- PROJECT 2 -->
+        <div class="ProjectItem"> <a href="Project1.html" alt="Project 1">
+          <img src="ProjectTemp.png" alt="Project 1"> </a>
+          <div class="ProjectText">
+            <h2>Project Name</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+          </div>
+        </div>
+        <!-- PROJECT 3 -->
+        <div class="ProjectItem"> <a href="Project1.html" alt="Project 1">
+          <img src="ProjectTemp.png" alt="Project 1"> </a>
+          <div class="ProjectText">
+            <h2>Project Name</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+          </div>
+        </div>
+        <!-- PROJECT 4 -->
+        <div class="ProjectItem"> <a href="Project1.html" alt="Project 1">
+          <img src="ProjectTemp.png" alt="Project 1"> </a>
+          <div class="ProjectText">
+            <h2>Project Name</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+          </div>
+        </div>
+        <!-- PROJECT 5 -->
+        <div class="ProjectItem"> <a href="Project1.html" alt="Project 1">
+          <img src="ProjectTemp.png" alt="Project 1"> </a>
+          <div class="ProjectText">
+            <h2>Project Name</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+          </div>
+        </div>
+        <!-- PROJECT 6 -->
+        <div class="ProjectItem"> <a href="Project1.html" alt="Project 1">
+          <img src="ProjectTemp.png" alt="Project 1"> </a>
+          <div class="ProjectText">
+            <h2>Project Name</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
           </div>
         </div>
       </div>
