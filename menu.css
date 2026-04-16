@@ -1,6 +1,6 @@
 :root
 {
-	--hex-size: clamp(70px, 10vw, 140px);
+	--hex-size: clamp(70px, 10vw, 200px);
 	--hex-gap: clamp(8px, 1.5vw, 18px);
 	--handle-height: 70px;
 }
