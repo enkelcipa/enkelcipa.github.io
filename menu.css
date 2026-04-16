@@ -238,6 +238,8 @@
 
 		margin: 0;
 		padding: 0;
+		
+		outline: 3px solid red;
 	}
 
 	.MobileMenu.active
@@ -250,13 +252,25 @@
 		width: 100%;
 		height: 100%;
 		max-width: none;
+		
+		padding: 20px;
+		box-sizing: border-box;
 
 		position: relative;
+		
+		outline: 3px solid red;
 	}
 
 	.HexGrid
 	{
 		flex-direction: column;
-		--hex-size: clamp(90px, 20vw, 190px);
+		
+		width: 100%;
+		align-items: center;
+		justify-content: flex-start;
+		
+		padding-top: 40px;
+		
+		--hex-size: clamp(100px, 20vw, 200px);
 	}
 }
