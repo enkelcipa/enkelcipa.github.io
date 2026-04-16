@@ -171,7 +171,6 @@
 		margin: 0;
 		padding: 0;
 		overscroll-behavior: none;
-		overflow: hidden;
 	}
 
 	body
@@ -179,8 +178,14 @@
 		background-size: cover;
 		background-position: center;
 		background-attachment: scroll;
+		scroll-behavior: auto;
 	}
-
+	
+	body.menu-open
+	{
+		overflow: hidden;
+	}
+	
 	.DesktopMenu
 	{
 		display: none;
