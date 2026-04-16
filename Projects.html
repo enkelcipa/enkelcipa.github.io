@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="menu.css">
     <style>
+:root {
+  --hex-size: clamp(70px, 10vw, 140px);
+  --hex-gap: clamp(8px, 1.5vw, 18px);
+  --handle-height: 70px;
+}
+
+/* FONT ONLY (menu handles global text now) */
+@font-face {
+  font-family: "UD Digi Kyokasho";
+  src: url("UD Digi Kyokasho NP-B.ttf");
+}
+
+/* =========================
+   BASE LAYOUT
+========================= */
+
 body {
   background-color: #4a281c;
   background-image: url("PageBackground.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   background-size: contain;
   background-position: center;
@@ -18,39 +34,122 @@ body {
   min-height: 100vh;
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: top;
 }
 
 body.menu-open {
   overflow: hidden;
 }
 
-/* TITLE ONLY */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* =========================
+   TITLE
+========================= */
 .Title {
   font-size: 40px;
   text-align: center;
   margin-top: 40px;
 }
-</style>
-  </head>
+      
+/* =========================
+   PROJECT GRID
+========================= */
+.ProjectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Project Item
+========================= */
+      
+.ProjectItem {
+  text-align: center;
+}
+      
+.ProjectItem a{
+  display: block;
+}
+      
+.ProjectItem img{
+	width: 100%;
+  max-width: 300px;
+  height: auto;
+  
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+      
+.ProjectItem a:hover img
+{
+  transform: scale(1.05);
+}
+
+/* TEXT UNDER IMAGE */
+.ProjectText
+{
+  margin-top: 12px;
+}
+
+.ProjectText h2
+{
+  margin: 0;
+  font-size: 20px;
+}
+
+.ProjectText p
+{
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+      
+@media (max-width: 768px)
+{
+  .ProjectGrid
+  {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .ProjectItem img
+  {
+    max-width: 260px;
+  }
+}
+      
+</style> </head>
   <body>
     <div class="Page">
-      
       <!-- PAGE CONTENT -->
-    	<div class="Title">
-      	<h1>Projects</h1>
-	    </div>
-      
+      <div class="Title">
+        <h1>Projects</h1>
+      </div>
       <!-- PROJECT GRID -->
       <div class="ProjectGrid">
-        
+        <div class="ProjectItem">
+          <a href="Project1.html" alt="Project 1">
+            <img src="" alt="Project 1">
+          </a>
+          <div class="ProjectText">
+            <h2>Project Name</h2>
+            <p>Short description of the project</p>
+          </div>
+        </div>
       </div>
-      
     </div>
-    
     <!-- REUSABLE MENU MOUNT POINT -->
     <div id="menu-container"></div>
     <script src="menu.js" defer="defer"></script>
+    
   </body>
 </html>
