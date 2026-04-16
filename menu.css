@@ -228,7 +228,7 @@
 		left: 0;
 		right: 0;
 
-		width: 100dvh;
+		width: 100%;
 		height: calc(100dvh - var(--handle-height));
 
 		transform: translateY(-100%);
