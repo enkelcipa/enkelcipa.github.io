@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects</title>
-
-<link rel="stylesheet" href="menu.css">
-
-<style>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="menu.css">
+    <style>
 body {
   background-color: #4a281c;
   background-image: url("PageBackground.png");
@@ -20,7 +18,7 @@ body {
   min-height: 100vh;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -32,21 +30,27 @@ body.menu-open {
 .Title {
   font-size: 40px;
   text-align: center;
+  margin-top: 40px;
 }
 </style>
-</head>
-
-<body>
-
-<!-- PAGE CONTENT -->
-<div class="Title">
-  <h1>Projects</h1>
-</div>
-
-<!-- REUSABLE MENU MOUNT POINT -->
-<div id="menu-container"></div>
-
-<script src="menu.js" defer></script>
-
-</body>
+  </head>
+  <body>
+    <div class="Page">
+      
+      <!-- PAGE CONTENT -->
+    	<div class="Title">
+      	<h1>Projects</h1>
+	    </div>
+      
+      <!-- PROJECT GRID -->
+      <div class="ProjectGrid">
+        
+      </div>
+      
+    </div>
+    
+    <!-- REUSABLE MENU MOUNT POINT -->
+    <div id="menu-container"></div>
+    <script src="menu.js" defer="defer"></script>
+  </body>
 </html>
