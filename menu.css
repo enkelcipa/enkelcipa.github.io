@@ -191,6 +191,7 @@
 	{
 		display: flex;
 		position: fixed;
+		
 		top: 0;
 		left: 0;
 
@@ -201,9 +202,12 @@
 		align-items: center;
 
 		background: #4a281c;
+		
 		z-index: 3000;
 
 		box-shadow: -10px 0 18px #C95103;
+		
+		flex-shrink: 0;
 	}
 
 	.MobileHandle img
