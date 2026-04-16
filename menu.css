@@ -226,8 +226,9 @@
 
 		top: var(--handle-height);
 		left: 0;
+		right: 0;
 
-		width: 100vw;
+		width: 100dvh;
 		height: calc(100dvh - var(--handle-height));
 
 		transform: translateY(-100%);
