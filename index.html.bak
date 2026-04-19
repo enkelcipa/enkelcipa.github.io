@@ -86,6 +86,9 @@ body.menu-open {
 
     min-height: 100dvh;
     padding: 20px;
+    box-sizing: border-box;
+    
+    overflow: hidden;
   }
 
   .CenterPiece
@@ -134,8 +137,7 @@ body.menu-open {
 }
     </style>
   </head>
-  <body>
-    <!-- PAGE CONTENT -->
+  <body> <!-- PAGE CONTENT -->
     <div class="CenterPiece">
       <div class="Name">Enkel Cipa</div>
       <div class="CenterImage"> <img src="PicOfMe.png"> </div>
