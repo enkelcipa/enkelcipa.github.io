@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project IMT</title>
+
+  <link rel="stylesheet" href="menu.css">
+
+  <style>
+:root {
+  --handle-height: 70px;
+}
+
+/* =========================
+   BASE LAYOUT
+========================= */
+
+body {
+  background-color: #4a281c;
+  background-image: url("PageBackground.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+  background-position: center;
+
+  margin: 0;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.Page {
+  width: 100%;
+  max-width: 900px;
+  padding: 80px 20px 60px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  gap: 28px;
+  text-align: center;
+}
+
+/* =========================
+   TITLE TILE
+========================= */
+
+.ProjectTitle {
+  text-align: center;
+}
+
+.ProjectTitle h1 {
+  font-size: clamp(32px, 6vw, 64px);
+  margin: 0;
+}
+
+/* =========================
+   TEXT BLOCKS
+========================= */
+
+p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.ProjectLink a {
+  display: inline-block;
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.ProjectVideo {
+  width: 100%;
+}
+
+.ProjectVideo iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+}
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+
+.ProjectImages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.ProjectImages img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* =========================
+   MOBILE MENU OFFSET
+========================= */
+
+@media (max-width: 768px)
+{
+  body
+  {
+    background-size: cover;
+	background-position: center;
+	background-repeat: repeat;
+	background-attachment: scroll;
+  }
+  .Page
+  {
+    padding: calc(var(--handle-height) + 20px) 20px 40px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<div class="Page">
+
+  <!-- TILE -->
+  <div class="ProjectTitle">
+    <h1>Project Interesting Mundane Tasks</h1>
+  </div>
+
+  <!-- PARAGRAPH 1 -->
+  <p>
+    Paragraph 1 — introduction to the project, what it is, and the core idea.
+  </p>
+
+  <!-- GITHUB LINK -->
+  <div class="ProjectLink">
+    <a href="https://github.com/your-repo" target="_blank">
+      View GitHub Repository
+    </a>
+  </div>
+
+  <!-- GAMEPLAY VIDEO -->
+  <div class="ProjectVideo">
+    <iframe 
+      src="https://www.youtube.com/embed/VIDEO_ID"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- PARAGRAPH 2 -->
+  <p>
+    Paragraph 2 — deeper explanation of systems or design.
+  </p>
+
+  <!-- PARAGRAPH 3 -->
+  <p>
+    Paragraph 3 — technical breakdown, mechanics, or implementation details.
+  </p>
+
+  <!-- IMAGE SPACE -->
+  <div class="ProjectImages">
+    <img src="ProjectTemp.png">
+    <img src="ProjectTemp.png">
+    <img src="ProjectTemp.png">
+  </div>
+
+  <!-- PARAGRAPH 4 -->
+  <p>
+    Paragraph 4 — challenges, problems faced, solutions.
+  </p>
+
+  <!-- PARAGRAPH 5 -->
+  <p>
+    Paragraph 5 — reflection, outcome, what you learned.
+  </p>
+
+</div>
+
+<!-- MENU -->
+<div id="menu-container"></div>
+<script src="menu.js"></script>
+
+</body>
+</html>
