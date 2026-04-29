@@ -102,23 +102,17 @@
 
 .HexGrid
 {
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  gap: var(--hex-gap);
-	  position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--hex-gap);
+	position: relative;
 }
 
 .hex-col
 {
-	  display: flex;
-	  flex-direction: column;
-	  gap: var(--hex-gap);
-}
-
-.hex-col.offset
-{
-	margin-top: 0;
+	display: contents;
 }
 
 /* =========================
@@ -260,6 +254,8 @@
 
 	.MobileMenu .MenuPanel
 	{
+		background: url("MenuPanelBackgroundMobile.png") no-repeat center/cover;
+		
 		width: 100%;
 		max-width: none;
 		
@@ -283,6 +279,6 @@
 		
 		padding-top: 40px;
 		
-		--hex-size: clamp(100px, 20vw, 200px);
+		--hex-size: min(130px, 30vw);
 	}
 }
