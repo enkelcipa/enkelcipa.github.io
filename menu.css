@@ -110,11 +110,6 @@
 	position: relative;
 }
 
-.hex-col
-{
-	display: contents;
-}
-
 /* =========================
    HEX BUTTONS
 ========================= */
@@ -231,20 +226,15 @@
 		left: 0;
 		right: 0;
 
-		width: auto;
+		width: 100vw;
 		height: calc(100dvh - var(--handle-height));
-		
-		overflow-y: auto;
-		
-		-webkit-overflow-scrolling: touch;
 
 		transform: translateY(-100%);
 		transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 
 		z-index: 2000;
-
-		margin: 0;
-		padding: 0;
+		
+		overflow: hidden;
 	}
 
 	.MobileMenu.active
@@ -254,31 +244,43 @@
 
 	.MobileMenu .MenuPanel
 	{
-		background: url("MenuPanelBackgroundMobile.png") no-repeat center/cover;
-		
 		width: 100%;
+		height: 100%;
 		max-width: none;
-		
-		height: auto;
-		min-height: 100%;
-		
-		padding: 20px;
-		box-sizing: border-box;
 
-		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+
+		padding: 0;
+		box-sizing: border-box;
 	}
 
 	.HexGrid
 	{
+		display: flex;
 		flex-direction: column;
-		flex-shrink: 0;
-		
-		width: 100%;
 		align-items: center;
-		justify-content: flex-start;
-		
-		padding-top: 40px;
 		
 		--hex-size: min(130px, 30vw);
+	}
+	
+	.MenuScrollArea
+	{
+		width: 100%;
+		height: 100%;
+
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+
+		padding: 40px 20px;
+		box-sizing: border-box;
+
+		overscroll-behavior: contain;
 	}
 }
