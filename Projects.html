@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,7 @@
   --handle-height: 70px;
 }
 
-/* FONT ONLY */
+/* FONT */
 @font-face {
   font-family: "UD Digi Kyokasho";
   src: url("UD Digi Kyokasho NP-B.ttf");
@@ -102,17 +102,20 @@ body.menu-open {
 .ProjectText
 {
   width: 100%;
-  max-width: 300px; /* match your image constraint */
+  max-width: 300px;
 }
       
-.ProjectItem a{
+.ProjectItem a
+{
   display: block;
 }
       
-.ProjectItem img{
-	width: 100%;
+.ProjectItem img
+{
+  width: 100%;
   max-width: 300px;
-  height: auto;
+  height: 200px;
+  object-fit: contain;
   
   border-radius: 12px;
   transition: transform 0.3s ease;
@@ -174,27 +177,27 @@ body.menu-open {
       <div class="ProjectGrid">
         <!-- MMO Class Design -->
         <div class="ProjectItem">
-		<a href="MMOClassDesign.html" alt="MMO Class Design">
+		<a href="MMOClassDesign.html">
 		<img src="ProjectTemp.png" alt="MMO Class Design"> </a>
           <div class="ProjectText">
             <h2>MMO Class Design</h2>
             <p>Creating a simple MMO framework in Unreal Engine using the Gameplay Ability
-			System plugin to explore class design inside of an MMO.</p>
+			System plugin to explore class design inside an MMO.</p>
           </div>
         </div>	  
-        <!-- Scapped Up! -->
+        <!-- Scrapped Up! -->
         <div class="ProjectItem">
-          <a href="ScrappedUp.html" alt="Scrapped Up!">
-            <img src="ProjectTemp.png" alt="Scrapped Up!"> </a>
+          <a href="GetScrapped.html">
+            <img src="ProjectTemp.png" alt="Get Scrapped!"> </a>
           <div class="ProjectText">
-            <h2>Scapped Up!</h2>
+            <h2>Get Scrapped!</h2>
             <p>4 player couch co-op party game where players collect parts, build a robot and
 			fight in the arena against each other, built inside Unreal Engine.</p>
           </div>
         </div>
         <!-- C++ Survivorslike -->
         <div class="ProjectItem">
-          <a href="C++Survivorslike.html" alt="C++ Survivorslike">
+          <a href="C++Survivorslike.html" >
             <img src="ProjectTemp.png" alt="C++ Survivorslike"> </a>
           <div class="ProjectText">
             <h2>C++ Survivorslike</h2>
@@ -203,7 +206,7 @@ body.menu-open {
         </div>
         <!-- Hexpansion -->
         <div class="ProjectItem">
-		<a href="Hexpansion.html" alt="Hexpansion">
+		<a href="Hexpansion.html">
 		<img src="ProjectTemp.png" alt="Hexpansion"> </a>
           <div class="ProjectText">
             <h2>Hexpansion</h2>
@@ -213,7 +216,7 @@ body.menu-open {
         </div>		
         <!-- Project IMT -->
         <div class="ProjectItem">
-		<a href="ProjectIMT.html" alt="Project IMT">
+		<a href="ProjectIMT.html">
 		<img src="ProjectTemp.png" alt="Project IMT"> </a>
           <div class="ProjectText">
             <h2>Project IMT</h2>
@@ -223,8 +226,8 @@ body.menu-open {
         </div>
 		<!-- Amalgamage -->
         <div class="ProjectItem">
-		<a href="Amalgamage.html" alt="Amalgamage">
-		<img src="ProjectTemp.png" alt="Amalgamage"> </a>
+		<a href="Amalgamage.html">
+		<img src="AmalgamageLogo.png" alt="Amalgamage"> </a>
           <div class="ProjectText">
             <h2>Amalgamage</h2>
             <p>Turn based combat game where the players unique battle gimmick is the merging
@@ -233,7 +236,8 @@ body.menu-open {
         </div>
       </div>
     </div>
-    <!-- REUSABLE MENU MOUNT POINT -->
+    
+    <!-- Menu Mount Point -->
     <div id="menu-container"></div>
     <script src="menu.js" defer="defer"></script>
   </body>
