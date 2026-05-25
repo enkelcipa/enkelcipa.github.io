@@ -133,6 +133,7 @@ p
   border-radius: 10px;
 }
 
+
 /* =========================
    MOBILE MENU OFFSET
 ========================= */
@@ -184,47 +185,60 @@ p
   <!-- GAMEPLAY VIDEO -->
   <div class="ProjectVideo">
     <iframe 
-      src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen>
+      src="https://youtu.be/vHqlT79OU1I" allowfullscreen>
     </iframe>
   </div>
 
   <!-- PARAGRAPH 2 -->
   <h2>Turn-based Combat System</h2>
   <p>
-    Paragraph 2 — Technical breakdown of project's core features explained.<br><br>
+    For Amalgamage we worked together to make a slightly more complex turn based system. We went through with a system
+    like this due to our main mechanic, Merge and Split. We had to work together to ensure that status effects carried
+    over to each slime when they merged and split apart.<br><br>
     
+    We also had our turn order get affected by each slime's speed stat. Any changes in the speed stat, dynamically adjusted
+    the turn order to reflect the changes.<br><br>
+    
+    Turn order is handled by a manager which communicated with each slime on the field to instigate their turn and allow combat
+    to flow. This manager would handle all updates to the turn order in reaction to slime death, speed changes, merge and split actions.
   </p>
   <h2>Merge and Split</h2>
   <p>
-    Paragraph 2 — Technical breakdown of project's core features explained.<br><br>
-
+    Merge and Split are actions that only the player's slimes can take. These abilities are free actions, meaning that
+    they do not consume the turn. This allows players to freely merge and split as many times as they'd like during combat,
+    allowing them to transfer buffs between their slimes but also debuffs.<br><br>
+    
+    When merging, two slimes fuse together to make a new slime with a new unique ability. Their health values are added together,
+    both max and current. This slime also gets to act immediately.<br> When attacking as a merged slime, the damage dealt
+    is split evenly between the two elements used to create them.<br><br>
+    
+    When splitting, the two slimes return back to their original creators. Their max health returns back to their original values.
+    However, the current health is evenly split between the two. The slime that did not initiate the merge gets to act immediately,
+    allowing for strategic opportunity to allow the same slime to act multiple times per turn.
   </p>
   <h2>Enemy AI</h2>
   <p>
     Paragraph 2 — Technical breakdown of project's core features explained.<br><br>
-
+    I was solely responsible for the AI design and implementation of the AI of the enemies in Amalgamage. I decided it was
+    best if I kept it simple and I followed a simple flowchart for how enemies would act on their turn:<br>
+  </p>
+    <div class="ProjectImages">
+      <img src="AmalgamageAIFlowchart.png" alt="">
+    </div>
+  <p>
+    This is a very simple breakdown of how the AI flowed in game.<br>
+    I decided to implement this through blueprints and functions in a simple flowchart rather than using a behaviour
+    tree or state tree. This is because the AI was designed to be as simple as possible so that I could focus on
+    balance, fixing bugs and implementing other features such as the debuffs and abilities of each slime.
   </p>
 
   <!-- PARAGRAPH 3 -->
   <p>
-    Paragraph 3 — Diagrams of core features.
-  </p>
-
-  <!-- IMAGE SPACE -->
-  <div class="ProjectImages">
-    <img src="ProjectTemp.png" alt="">
-    <img src="ProjectTemp.png" alt="">
-    <img src="ProjectTemp.png" alt="">
-  </div>
-
-  <!-- PARAGRAPH 4 -->
-  <p>
-    Paragraph 4 — Technical breakdown of project's secondary features.
-  </p>
-
-  <!-- PARAGRAPH 5 -->
-  <p>
-    Paragraph 5 — reflection, outcome, what you learned.
+    Working with a team that was slightly lacking in technical capability allowed me to deepen my knowledge of complex
+    interactions and allow others to focus on their strengths. This was the first time making an AI that had some
+    complexity tied to it with the somewhat large amount of decision-making involved. The merge and split mechanic was
+    something that required a lot of my attention as I had to interact with the turn order heavily. Making this a free 
+    action required a lot of my involvement to ensure that it worked as intended.
   </p>
 
 </div>
