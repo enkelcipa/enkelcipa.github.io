@@ -187,6 +187,26 @@ p {
     {
       padding: calc(var(--handle-height) + 20px) 20px 40px;
     }
+    .VideoGrid
+    {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+@media (max-width: 480px)
+{
+  .VideoGrid
+  {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px)
+{
+  .VideoGrid
+  {
+    grid-template-columns: 1fr;
+  }
   }
   </style>
 </head>
@@ -195,7 +215,7 @@ p {
 
 <div class="Page">
 
-  <!-- TILE -->
+  <!-- TITLE -->
   <div class="ProjectTitle">
     <h1>Project Interesting Mundane Tasks</h1>
   </div>
