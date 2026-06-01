@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   gap: 28px;
   text-align: center;
 }
@@ -59,16 +59,40 @@ body {
 
 .ProjectTitle h1 {
   font-size: clamp(32px, 6vw, 64px);
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
   margin: 0;
+
+  text-shadow:
+          -3px -3px 5px #4A281C,
+          3px -3px 5px #4A281C,
+          -3px 3px 5px #4A281C,
+          3px 3px 5px #4A281C;
 }
 
 /* =========================
    TEXT BLOCKS
 ========================= */
 
+h1
+{
+  margin: 0;
+  font-size: clamp(16px, 6vw, 32px);
+
+  text-shadow:
+    -3px -3px 5px #4A281C,
+    3px -3px 5px #4A281C,
+    -3px 3px 5px #4A281C,
+    3px 3px 5px #4A281C;
+}
+
 p {
   margin: 0;
   line-height: 1.6;
+
+  background: rgba(44 24 17 / 0.8);
+  padding: 12px 12px;
+  border-radius: 12px;
 }
 
 /* =========================
@@ -80,6 +104,10 @@ p {
   color: white;
   text-decoration: underline;
   font-weight: bold;
+
+  background: rgba(44 24 17 / 0.8);
+  padding: 12px 12px;
+  border-radius: 12px;
 }
 
 /* =========================
@@ -90,11 +118,41 @@ p {
   width: 100%;
 }
 
-.ProjectVideo iframe {
+.ProjectVideo video {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: none;
   border-radius: 12px;
+}
+
+.VideoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.VideoGrid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(44 24 17 / 0.8);
+  border: none;
+  border-radius: 12px;
+}
+
+.VideoGrid-item video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 12px;
+}
+
+.VideoGrid-item p {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+  background: none;
 }
 
 /* =========================
@@ -116,20 +174,20 @@ p {
    MOBILE MENU OFFSET
 ========================= */
 
-@media (max-width: 768px)
-{
-  body
+  @media (max-width: 768px)
   {
-    background-size: cover;
-	background-position: center;
-	background-repeat: repeat;
-	background-attachment: scroll;
+    body
+    {
+      background-size: cover;
+      background-position: center;
+      background-repeat: repeat;
+      background-attachment: scroll;
+    }
+    .Page
+    {
+      padding: calc(var(--handle-height) + 20px) 20px 40px;
+    }
   }
-  .Page
-  {
-    padding: calc(var(--handle-height) + 20px) 20px 40px;
-  }
-}
   </style>
 </head>
 
@@ -146,7 +204,7 @@ p {
   <p>
     Project Interesting Mundane Tasks (IMT) is a job simulator game made in Unreal Engine 5.6 for my Final Year Project at
     University. This game is based around the question of "How do I make mundane tasks interesting and engaging?".<br><br>
-This project allowed me to explore how developers retain player's attention when the task at hand is uninteresting and boring.
+    This project allowed me to explore how developers retain player's attention when the task at hand is uninteresting and boring.
   </p>
 
   <!-- GITHUB LINK -->
@@ -158,42 +216,86 @@ This project allowed me to explore how developers retain player's attention when
 
   <!-- GAMEPLAY VIDEO -->
   <div class="ProjectVideo">
-    <video controls>
-      <source src = "VideoName.mp4" type = "video/mp4">
+    <video autoplay muted loop controls>
+      <source src="Project IMT/FYPGameplayVideo.mp4" type="video/mp4">
     </video>
   </div>
 
   <!-- PARAGRAPH 2 -->
+  <h1>Tasks</h1>
   <p>
-    Paragraph 2 — deeper explanation of systems or design.
     The main gameplay loop involves the player running around the map completing various tasks that are assigned
-    randomly to the player. These tasks require the player to complete various minigames to complete the task. <br><br>
+    randomly. These tasks require the player to complete various minigames to complete the task. <br><br>
     These minigames are comprised of:<br>
-    Connecting a New PC to the Network - 
-  </p>
+    <div class="VideoGrid">
+      <div class="VideoGrid-item">
+        <video autoplay muted loop controls>
+          <source src="Project IMT/FYPConnectingWires.mp4" type="video/mp4">
+        </video>
+        <p>Connecting a New PC to the Network<br>Connecting Wires</p>
+      </div>
+      <div class="VideoGrid-item">
+        <video autoplay muted loop controls>
+          <source src="Project IMT/FYPDiagnosingSystemError.mp4" type="video/mp4">
+        </video>
+        <p>Diagnosing System Errors<br>Quick Time Events</p>
+      </div>
+      <div class="VideoGrid-item">
+        <video autoplay muted loop controls>
+          <source src="Project IMT/FYPAcceptingMail.mp4" type="video/mp4">
+        </video>
+        <p>Accepting Mail Delivery<br>Press and Hold</p>
+      </div>
+      <div class="VideoGrid-item">
+        <video autoplay muted loop controls>
+          <source src="Project IMT/FYPSmokeBreak.mp4" type="video/mp4">
+        </video>
+        <p>Smoking<br>Dragging Objects, Quick Time Events, Press and Hold</p>
+      </div>
+      <div class="VideoGrid-item">
+        <video autoplay muted loop controls>
+          <source src="Project IMT/FYPMakingCoffee.mp4" type="video/mp4">
+        </video>
+        <p>Making Coffee<br>Dragging Objects</p>
+      </div>
+      <div class="VideoGrid-item">
+        <video autoplay muted loop controls>
+          <source src="Project IMT/FYPBathroomBreak.mp4" type="video/mp4">
+        </video>
+        <p>Going to the Bathroom<br>Press and Hold</p>
+      </div>
+    </div>
 
   <!-- PARAGRAPH 3 -->
+  <h1>Resources</h1>
   <p>
-    Paragraph 3 — technical breakdown, mechanics, or implementation details.
+    In addition to various minigames, I implemented 3 resource bars that the player had to manage in order to be able 
+    to complete the game:
+  </p>
+  <p>
+    Alertness<br>
+    Drains slowly as time passes.<br>
+    The player's movement speed is depended on how full the Alertness Bar is.<br>
+    When the bar is fully depleted the player becomes incapacitated and a game over is displayed.
+  </p>
+  <p>
+    Shortcomings<br>
+    Drains slowly as time passes.<br>
+    This bar acts as a multiplier for the Stress Bar.<br>
+    The more it fills, the faster the Stress Bar fills.
+  </p>
+  <p>
+    Stress<br>
+    Increases slowly as time passes.<br>
+    Certain actions cause this bar to increase.<br>
+    The player is stopped at random intervals the more this bar is filled.<br>
+    When this bar is filled, the player becomes enraged and a game over is displayed.
   </p>
 
-  <!-- IMAGE SPACE -->
-  <div class="ProjectImages">
-    <img src="ProjectTemp.png">
-    <img src="ProjectTemp.png">
-    <img src="ProjectTemp.png">
-  </div>
-
-  <!-- PARAGRAPH 4 -->
   <p>
-    Paragraph 4 — challenges, problems faced, solutions.
+    These resources add to the engagement of the player as now they have to juggle the completion of tasks alongside
+    the management of resources that could cause them to fail entirely.
   </p>
-
-  <!-- PARAGRAPH 5 -->
-  <p>
-    Paragraph 5 — reflection, outcome, what you learned.
-  </p>
-
 </div>
 
 <!-- MENU -->
