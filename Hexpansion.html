@@ -1,293 +1,295 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hexpansion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexpansion</title>
 
-  <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="menu.css">
 
-  <style>
-:root {
-  --handle-height: 70px;
-}
+    <style>
+        :root {
+            --handle-height: 70px;
+        }
 
-/* =========================
-   BASE LAYOUT
-========================= */
+        /* =========================
+           BASE LAYOUT
+        ========================= */
 
-body {
-  background-color: #4a281c;
-  background-image: url("PageBackground.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center;
+        body {
+            background-color: #4a281c;
+            background-image: url("PageBackground.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-position: center;
 
-  margin: 0;
-  min-height: 100vh;
+            margin: 0;
+            min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-}
+            display: flex;
+            justify-content: center;
+        }
 
-/* =========================
-   PAGE CONTAINER
-========================= */
+        /* =========================
+           PAGE CONTAINER
+        ========================= */
 
-.Page {
-  width: 100%;
-  max-width: 900px;
-  padding: 80px 20px 60px;
-  box-sizing: border-box;
+        .Page {
+            width: 100%;
+            max-width: 900px;
+            padding: 80px 20px 60px;
+            box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  gap: 28px;
-  text-align: center;
-}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-/* =========================
-   TITLE TILE
-========================= */
+            gap: 28px;
+            text-align: center;
+        }
 
-.ProjectTitle {
-  text-align: center;
-}
+        /* =========================
+           TITLE TILE
+        ========================= */
 
-.ProjectTitle h1 {
-  font-size: clamp(32px, 6vw, 64px);
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  margin: 0;
+        .ProjectTitle {
+            text-align: center;
+        }
 
-  text-shadow:
-    -3px -3px 5px #4A281C,
-    3px -3px 5px #4A281C,
-    -3px 3px 5px #4A281C,
-    3px 3px 5px #4A281C;
-}
+        .ProjectTitle h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            margin: 0;
 
-/* =========================
-   TEXT BLOCKS
-========================= */
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-h1
-{
-  margin: 0;
-  font-size: clamp(16px, 6vw, 32px);
+        /* =========================
+           TEXT BLOCKS
+        ========================= */
 
-  text-shadow:
-    -3px -3px 5px #4A281C,
-    3px -3px 5px #4A281C,
-    -3px 3px 5px #4A281C,
-    3px 3px 5px #4A281C;
-}
+        h1 {
+            margin: 0;
+            font-size: clamp(16px, 6vw, 32px);
 
-p {
-  margin: 0;
-  line-height: 1.6;
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+        p {
+            margin: 0;
+            line-height: 1.6;
 
-/* =========================
-   LINKS
-========================= */
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-.ProjectLink a {
-  display: inline-block;
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
+        /* =========================
+           LINKS
+        ========================= */
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+        .ProjectLink a {
+            display: inline-block;
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
 
-/* =========================
-   VIDEO
-========================= */
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-.ProjectVideo {
-  width: 100%;
-}
+        /* =========================
+           VIDEO
+        ========================= */
 
-.ProjectVideo video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 12px;
-}
+        .ProjectVideo {
+            width: 100%;
+        }
 
-/* =========================
-   IMAGE GALLERY
-========================= */
+        .ProjectVideo video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+        }
 
-.ProjectImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
+        /* =========================
+           IMAGE GALLERY
+        ========================= */
 
-.ProjectImages img {
-  width: 100%;
-  border-radius: 10px;
-}
+        .ProjectImages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-.ProjectImages img.extrasmall {
-  width: 20%;
-  justify-self: center;
-}
+        .ProjectImages img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-.ProjectImages img.small {
-  width: 40%;
-  justify-self: center;
-}
+        .ProjectImages img.extrasmall {
+            width: 20%;
+            justify-self: center;
+        }
 
-.ProjectImages img.medium {
-  width: 60%;
-  justify-self: center;
-}
+        .ProjectImages img.small {
+            width: 40%;
+            justify-self: center;
+        }
 
-.ProjectImages img.large {
-  width: 80%;
-  justify-self: center;
-}
+        .ProjectImages img.medium {
+            width: 60%;
+            justify-self: center;
+        }
 
-/* =========================
-   MOBILE MENU OFFSET
-========================= */
+        .ProjectImages img.large {
+            width: 80%;
+            justify-self: center;
+        }
 
-@media (max-width: 768px)
-{
-  body
-  {
-    background-size: cover;
-	background-position: center;
-	background-repeat: repeat;
-	background-attachment: scroll;
-  }
-  .Page
-  {
-    padding: calc(var(--handle-height) + 20px) 20px 40px;
-  }
-  .ProjectImages
-  {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 480px)
-{
-  .ProjectImages
-  {
-    grid-template-columns: 1fr;
-  }
-}
-  </style>
+        /* =========================
+           MOBILE MENU OFFSET
+        ========================= */
+
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+
+            .Page {
+                padding: calc(var(--handle-height) + 20px) 20px 40px;
+            }
+
+            .ProjectImages {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ProjectImages {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="Page">
 
-  <!-- TILE -->
-  <div class="ProjectTitle">
-    <h1>Hexpansion</h1>
-  </div>
+    <!-- TILE -->
+    <div class="ProjectTitle">
+        <h1>Hexpansion</h1>
+    </div>
 
-  <!-- PARAGRAPH 1 -->
-  <p>
-    Hexpansion is a city builder game built in Unreal Engine 5.6 for my Prototyping for Technical Designers unit at University.
-    We were tasked to pick a genre from a list, then produce a visually and technically polished game within 8 weeks.<br><br>
-    Hexpansion features a hexagonal grid map with procedurally generated biomes. I designed and implemented systems for building
-    placement, destruction and a responsive road placement system that automatically adjusts to the correct mesh and orientation.
-  </p>
+    <!-- PARAGRAPH 1 -->
+    <p>
+        Hexpansion is a city builder game built in Unreal Engine 5.6 for my Prototyping for Technical Designers unit at
+        University.
+        We were tasked to pick a genre from a list, then produce a visually and technically polished game within 8
+        weeks.<br><br>
+        Hexpansion features a hexagonal grid map with procedurally generated biomes. I designed and implemented systems
+        for building
+        placement, destruction and a responsive road placement system that automatically adjusts to the correct mesh and
+        orientation.
+    </p>
 
-  <!-- GITHUB LINK -->
-  <div class="ProjectLink">
-    <a href="https://github.com/enkelcipa/Prototyping-for-Technical-Designers" target="_blank">
-      View GitHub Repository
-    </a>
-  </div>
+    <!-- GITHUB LINK -->
+    <div class="ProjectLink">
+        <a href="https://github.com/enkelcipa/Prototyping-for-Technical-Designers" target="_blank">
+            View GitHub Repository
+        </a>
+    </div>
 
-  <!-- GAMEPLAY VIDEO -->
-  <div class="ProjectVideo">
-    <video autoplay muted loop controls>
-      <source src="Hexpansion/" type="video/mp4">
-    </video>
-  </div>
+    <!-- GAMEPLAY VIDEO -->
+    <div class="ProjectVideo">
+        <video autoplay muted loop controls>
+            <source src="Hexpansion/" type="video/mp4">
+        </video>
+    </div>
 
 
-  <!-- PARAGRAPH 2 -->
-  <h1>Procedurally Generated Map</h1>
-  <p>
-    The map in Hexpansion is always constructed to be the same size. This value can be set by the developer/designer.
-    I use procedural generation to generate biomes with the use of Perlin Noise. This value equates to 1 of 4 biomes
-    in the game.
-  </p>
-  <div class="ProjectImages">
-    <img src="Hexpansion/HexpansionPreCleanUpBiome.png" alt="">
-  </div>
-  <p>
-    This is what the first pass of the generation looks like before the biomes are expanded and cleaned up.
-  </p>
-  <div class="ProjectImages">
-    <img src="Hexpansion/HexpansionExpandedBiomes.png" alt="">
-  </div>
-  <p>
-    Once the biomes are expanded we can see that they take up larger portions of the map, but we do occasionally see a 
-    tile that is on its own and has no neighbouring tiles of the same biome.
-  </p>
-  <div class="ProjectImages">
-    <img src="Hexpansion/HexpansionPostCleanUp.png" alt="">
-  </div>
-  <p>
-    I then run my final pass to remove all the single tiles. From this image we can see that every tile has at least
-    1 neighbour that is of the same biome.<br>
-    Ideally I would do another pass which removes all the small biomes (2-3 tiles) but I was constrained by time.
-  </p>
-  
-  <h1>Dynamic Road Placement</h1>
-  <p>
-    This was something that also took a considerable amount of time in my project.<br>
-    When a player places a road, the tile looks at all the neighbouring tiles to see if they are also roads. The tile
-    then selects the correct road mesh to use and rotate it accordingly.
-  </p>
-  <div class="ProjectImages">
-    <img src="Hexpansion/HexpansionRoadBitMaskValues.png" alt="" class="medium">
-  </div>
-  <p>
-    I decided that using a bitmask was the best approach to handle road placement. Each road type has its own bitmask
-    value assigned to it.<br>
-    I then calculate which road I need based off of the neighbouring road tiles and rotate the mesh accordingly.
-  </p>
-  <div class="ProjectVideo">
-    <video autoplay muted loop controls>
-      <source src="Hexpansion/HexpansionDynamicRoadPlacement.mp4" type="video/mp4">
-    </video>
-  </div>
+    <!-- PARAGRAPH 2 -->
+    <h1>Procedurally Generated Map</h1>
+    <p>
+        The map in Hexpansion is always constructed to be the same size. This value can be set by the
+        developer/designer.
+        I use procedural generation to generate biomes with the use of Perlin Noise. This value equates to 1 of 4 biomes
+        in the game.
+    </p>
+    <div class="ProjectImages">
+        <img src="Hexpansion/HexpansionPreCleanUpBiome.png" alt="">
+    </div>
+    <p>
+        This is what the first pass of the generation looks like before the biomes are expanded and cleaned up.
+    </p>
+    <div class="ProjectImages">
+        <img src="Hexpansion/HexpansionExpandedBiomes.png" alt="">
+    </div>
+    <p>
+        Once the biomes are expanded we can see that they take up larger portions of the map, but we do occasionally see
+        a
+        tile that is on its own and has no neighbouring tiles of the same biome.
+    </p>
+    <div class="ProjectImages">
+        <img src="Hexpansion/HexpansionPostCleanUp.png" alt="">
+    </div>
+    <p>
+        I then run my final pass to remove all the single tiles. From this image we can see that every tile has at least
+        1 neighbour that is of the same biome.<br>
+        Ideally I would do another pass which removes all the small biomes (2-3 tiles) but I was constrained by time.
+    </p>
 
-  <h1>Building Placement and Destruction</h1>
-  <p>
-    When Build Mode is toggled, the player can select buildings in the UI. This then spawns the building with a
-    transparent material that alternates between red and green to indicate whether it can be placed or not. 
-  </p>
-  
-  <!-- IMAGE SPACE -->
-  <div class="ProjectImages">
-    <img src="Hexpansion/HexpansionInvalidPlacement.png" alt="">
-    <img src="Hexpansion/HexpansionValidPlacement.png" alt="">
-    <img src="Hexpansion/HexpansionPlacementCriteria.png" alt="">
-  </div>
+    <h1>Dynamic Road Placement</h1>
+    <p>
+        This was something that also took a considerable amount of time in my project.<br>
+        When a player places a road, the tile looks at all the neighbouring tiles to see if they are also roads. The
+        tile
+        then selects the correct road mesh to use and rotate it accordingly.
+    </p>
+    <div class="ProjectImages">
+        <img src="Hexpansion/HexpansionRoadBitMaskValues.png" alt="" class="medium">
+    </div>
+    <p>
+        I decided that using a bitmask was the best approach to handle road placement. Each road type has its own
+        bitmask
+        value assigned to it.<br>
+        I then calculate which road I need based off of the neighbouring road tiles and rotate the mesh accordingly.
+    </p>
+    <div class="ProjectVideo">
+        <video autoplay muted loop controls>
+            <source src="Hexpansion/HexpansionDynamicRoadPlacement.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <h1>Building Placement and Destruction</h1>
+    <p>
+        When Build Mode is toggled, the player can select buildings in the UI. This then spawns the building with a
+        transparent material that alternates between red and green to indicate whether it can be placed or not.
+    </p>
+
+    <!-- IMAGE SPACE -->
+    <div class="ProjectImages">
+        <img src="Hexpansion/HexpansionInvalidPlacement.png" alt="">
+        <img src="Hexpansion/HexpansionValidPlacement.png" alt="">
+        <img src="Hexpansion/HexpansionPlacementCriteria.png" alt="">
+    </div>
 </div>
 
 <!-- MENU -->

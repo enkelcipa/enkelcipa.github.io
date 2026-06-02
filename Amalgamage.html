@@ -1,224 +1,221 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amalgamage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amalgamage</title>
 
-  <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="menu.css">
 
-  <style>
-:root
-{
-  --handle-height: 70px;
-}
+    <style>
+        :root {
+            --handle-height: 70px;
+        }
 
-/* =========================
-   BASE LAYOUT
-========================= */
+        /* =========================
+           BASE LAYOUT
+        ========================= */
 
-body {
-  background-color: #4a281c;
-  background-image: url("PageBackground.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center;
+        body {
+            background-color: #4a281c;
+            background-image: url("PageBackground.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-position: center;
 
-  margin: 0;
-  min-height: 100vh;
+            margin: 0;
+            min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-}
+            display: flex;
+            justify-content: center;
+        }
 
-/* =========================
-   PAGE CONTAINER
-========================= */
+        /* =========================
+           PAGE CONTAINER
+        ========================= */
 
-.Page {
-  width: 100%;
-  max-width: 900px;
-  padding: 80px 20px 60px;
-  box-sizing: border-box;
+        .Page {
+            width: 100%;
+            max-width: 900px;
+            padding: 80px 20px 60px;
+            box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-  gap: 28px;
-  text-align: center;
-}
+            gap: 28px;
+            text-align: center;
+        }
 
-/* =========================
-   TITLE TILE
-========================= */
+        /* =========================
+           TITLE TILE
+        ========================= */
 
-.ProjectTitle {
-  text-align: center;
-}
+        .ProjectTitle {
+            text-align: center;
+        }
 
-.ProjectTitle h1 {
-  font-size: clamp(32px, 6vw, 64px);
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  margin: 0;
+        .ProjectTitle h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            margin: 0;
 
-  text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-/* =========================
-   TEXT BLOCKS
-========================= */
+        /* =========================
+           TEXT BLOCKS
+        ========================= */
 
-h1
-{
-  margin: 0;
-  font-size: clamp(16px, 6vw, 32px);
+        h1 {
+            margin: 0;
+            font-size: clamp(16px, 6vw, 32px);
 
-  text-shadow:
-    -3px -3px 5px #4A281C,
-    3px -3px 5px #4A281C,
-    -3px 3px 5px #4A281C,
-    3px 3px 5px #4A281C;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-p {
-  margin: 0;
-  line-height: 1.6;
+        p {
+            margin: 0;
+            line-height: 1.6;
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-/* =========================
-   LINKS
-========================= */
+        /* =========================
+           LINKS
+        ========================= */
 
-.ProjectLink a {
-  display: inline-block;
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
+        .ProjectLink a {
+            display: inline-block;
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-/* =========================
-   VIDEO
-========================= */
+        /* =========================
+           VIDEO
+        ========================= */
 
-.ProjectVideo {
-  width: 100%;
-}
+        .ProjectVideo {
+            width: 100%;
+        }
 
-.ProjectVideo video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 12px;
-}
+        .ProjectVideo video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+        }
 
-/* =========================
-   IMAGE GALLERY
-========================= */
+        /* =========================
+           IMAGE GALLERY
+        ========================= */
 
-.ProjectImages
-{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
+        .ProjectImages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
 
-.ProjectImages img
-{
-  width: 100%;
-  border-radius: 10px;
-}
+        .ProjectImages img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
 
-/* =========================
-   MOBILE MENU OFFSET
-========================= */
+        /* =========================
+           MOBILE MENU OFFSET
+        ========================= */
 
-@media (max-width: 768px)
-{
-  body
-  {
-    background-size: cover;
-	background-position: center;
-	background-repeat: repeat;
-	background-attachment: scroll;
-  }
-  .Page
-  {
-    padding: calc(var(--handle-height) + 20px) 20px 40px;
-  }
-}
-  </style>
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+
+            .Page {
+                padding: calc(var(--handle-height) + 20px) 20px 40px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="Page">
 
-  <!-- TILE -->
-  <div class="ProjectTitle">
-    <h1>Amalgamage</h1>
-  </div>
+    <!-- TILE -->
+    <div class="ProjectTitle">
+        <h1>Amalgamage</h1>
+    </div>
 
-  <!-- PARAGRAPH 1 -->
-  <p>
-    Amalgamage is a turn-based game built in Unreal Engine 5.6 for my Rapid Games Development unit at University.
-    For this unit we were put into teams of 6 or 7, and were tasked to create either a Turn-Based or Observational
-    Horror game within 8 weeks.<br><br>
-    My group opted for a turn-based game, that features dynamic unit mechanics that allow party members to merge and
-    split during battle, to gain access to a new ability to utilise. I was responsible for designing and implementing
-    enemy AI, as well as resolving the majority of bugs to ensure stable gameplay. The project highlights a balance
-    of technical problem-solving and engaging combat design.
-  </p>
+    <!-- PARAGRAPH 1 -->
+    <p>
+        Amalgamage is a turn-based game built in Unreal Engine 5.6 for my Rapid Games Development unit at University.
+        For this unit we were put into teams of 6 or 7, and were tasked to create either a Turn-Based or Observational
+        Horror game within 8 weeks.<br><br>
+        My group opted for a turn-based game, that features dynamic unit mechanics that allow party members to merge and
+        split during battle, to gain access to a new ability to utilise. I was responsible for designing and
+        implementing
+        enemy AI, as well as resolving the majority of bugs to ensure stable gameplay. The project highlights a balance
+        of technical problem-solving and engaging combat design.
+    </p>
 
-  <!-- GITHUB LINK -->
-  <div class="ProjectLink">
-    <a href="https://github.com/enkelcipa/Amalgamage" target="_blank">
-      View GitHub Repository
-    </a>
-  </div>
+    <!-- GITHUB LINK -->
+    <div class="ProjectLink">
+        <a href="https://github.com/enkelcipa/Amalgamage" target="_blank">
+            View GitHub Repository
+        </a>
+    </div>
 
-  <!-- GAMEPLAY VIDEO -->
-  <div class="ProjectVideo">
-    <video autoplay muted loop controls>
-      <source src="Amalgamage/AmalgamageGameplay.mp4" type="video/mp4">
-    </video>
-  </div>
+    <!-- GAMEPLAY VIDEO -->
+    <div class="ProjectVideo">
+        <video autoplay muted loop controls>
+            <source src="Amalgamage/AmalgamageGameplay.mp4" type="video/mp4">
+        </video>
+    </div>
 
-  <!-- PARAGRAPH 2 -->
-  <h1>Enemy AI</h1>
-  <p>
-    I was solely responsible for the AI design and implementation of the AI of the enemies in Amalgamage. I decided it was
-    best if I kept it simple and I followed a simple flowchart for how enemies would act on their turn:<br>
-  </p>
-  <div class="ProjectImages">
-    <img src="Amalgamage/AmalgamageAIFlowchart.png" alt="">
-  </div>
-  <p>
-    This is a very simple breakdown of how the AI flowed in game.<br>
-    Enemies quickly decide what role they play in battle based off of the ability they have. For example, if a Fire Slime
-    was taking its turn, it would go down the "I am not a healer" route. It would then check for Lightning stacks on a target.
-    If there are any stacks it would then decide whether to attack with its basic attack or Fireball ability.
-    It then does a simple check to see if there is enough Mana for it to use Fireball before taking its action.<br><br>
-    
-    I decided to implement this through blueprints and functions in a simple flowchart rather than using a behaviour
-    tree or state tree. This is because the AI was designed to be as simple as possible so that I could focus on
-    balance, fixing bugs and implementing other features such as the debuffs and abilities of each slime.
-  </p>
+    <!-- PARAGRAPH 2 -->
+    <h1>Enemy AI</h1>
+    <p>
+        I was solely responsible for the AI design and implementation of the AI of the enemies in Amalgamage. I decided
+        it was
+        best if I kept it simple and I followed a simple flowchart for how enemies would act on their turn:<br>
+    </p>
+    <div class="ProjectImages">
+        <img src="Amalgamage/AmalgamageAIFlowchart.png" alt="">
+    </div>
+    <p>
+        This is a very simple breakdown of how the AI flowed in game.<br>
+        Enemies quickly decide what role they play in battle based off of the ability they have. For example, if a Fire
+        Slime
+        was taking its turn, it would go down the "I am not a healer" route. It would then check for Lightning stacks on
+        a target.
+        If there are any stacks it would then decide whether to attack with its basic attack or Fireball ability.
+        It then does a simple check to see if there is enough Mana for it to use Fireball before taking its
+        action.<br><br>
+
+        I decided to implement this through blueprints and functions in a simple flowchart rather than using a behaviour
+        tree or state tree. This is because the AI was designed to be as simple as possible so that I could focus on
+        balance, fixing bugs and implementing other features such as the debuffs and abilities of each slime.
+    </p>
 </div>
 
 <!-- MENU -->

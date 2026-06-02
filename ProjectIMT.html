@@ -1,313 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project IMT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project IMT</title>
 
-  <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="menu.css">
 
-  <style>
-:root {
-  --handle-height: 70px;
-}
+    <style>
+        :root {
+            --handle-height: 70px;
+        }
 
-/* =========================
-   BASE LAYOUT
-========================= */
+        /* =========================
+           BASE LAYOUT
+        ========================= */
 
-body {
-  background-color: #4a281c;
-  background-image: url("PageBackground.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center;
+        body {
+            background-color: #4a281c;
+            background-image: url("PageBackground.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-position: center;
 
-  margin: 0;
-  min-height: 100vh;
+            margin: 0;
+            min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-}
+            display: flex;
+            justify-content: center;
+        }
 
-/* =========================
-   PAGE CONTAINER
-========================= */
+        /* =========================
+           PAGE CONTAINER
+        ========================= */
 
-.Page {
-  width: 100%;
-  max-width: 900px;
-  padding: 80px 20px 60px;
-  box-sizing: border-box;
+        .Page {
+            width: 100%;
+            max-width: 900px;
+            padding: 80px 20px 60px;
+            box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-  gap: 28px;
-  text-align: center;
-}
+            gap: 28px;
+            text-align: center;
+        }
 
-/* =========================
-   TITLE TILE
-========================= */
+        /* =========================
+           TITLE TILE
+        ========================= */
 
-.ProjectTitle {
-  text-align: center;
-}
+        .ProjectTitle {
+            text-align: center;
+        }
 
-.ProjectTitle h1 {
-  font-size: clamp(32px, 6vw, 64px);
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  margin: 0;
+        .ProjectTitle h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            margin: 0;
 
-  text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-/* =========================
-   TEXT BLOCKS
-========================= */
+        /* =========================
+           TEXT BLOCKS
+        ========================= */
 
-h1
-{
-  margin: 0;
-  font-size: clamp(16px, 6vw, 32px);
+        h1 {
+            margin: 0;
+            font-size: clamp(16px, 6vw, 32px);
 
-  text-shadow:
-    -3px -3px 5px #4A281C,
-    3px -3px 5px #4A281C,
-    -3px 3px 5px #4A281C,
-    3px 3px 5px #4A281C;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-p {
-  margin: 0;
-  line-height: 1.6;
+        p {
+            margin: 0;
+            line-height: 1.6;
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-/* =========================
-   LINKS
-========================= */
+        /* =========================
+           LINKS
+        ========================= */
 
-.ProjectLink a {
-  display: inline-block;
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
+        .ProjectLink a {
+            display: inline-block;
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-/* =========================
-   VIDEO
-========================= */
+        /* =========================
+           VIDEO
+        ========================= */
 
-.ProjectVideo {
-  width: 100%;
-}
+        .ProjectVideo {
+            width: 100%;
+        }
 
-.ProjectVideo video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 12px;
-}
+        .ProjectVideo video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+        }
 
-.VideoGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
+        .VideoGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
 
-.VideoGrid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background: rgba(44 24 17 / 0.8);
-  border: none;
-  border-radius: 12px;
-}
+        .VideoGrid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: rgba(44 24 17 / 0.8);
+            border: none;
+            border-radius: 12px;
+        }
 
-.VideoGrid-item video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 12px;
-}
+        .VideoGrid-item video {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+        }
 
-.VideoGrid-item p {
-  font-size: 14px;
-  color: white;
-  margin: 0;
-  background: none;
-}
+        .VideoGrid-item p {
+            font-size: 14px;
+            color: white;
+            margin: 0;
+            background: none;
+        }
 
-/* =========================
-   IMAGE GALLERY
-========================= */
+        /* =========================
+           IMAGE GALLERY
+        ========================= */
 
-.ProjectImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
+        .ProjectImages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
 
-.ProjectImages img {
-  width: 100%;
-  border-radius: 10px;
-}
+        .ProjectImages img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-/* =========================
-   MOBILE MENU OFFSET
-========================= */
+        /* =========================
+           MOBILE MENU OFFSET
+        ========================= */
 
-  @media (max-width: 768px)
-  {
-    body
-    {
-      background-size: cover;
-      background-position: center;
-      background-repeat: repeat;
-      background-attachment: scroll;
-    }
-    .Page
-    {
-      padding: calc(var(--handle-height) + 20px) 20px 40px;
-    }
-    .VideoGrid
-    {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
 
-@media (max-width: 480px)
-{
-  .VideoGrid
-  {
-    grid-template-columns: 1fr;
-  }
-}
-  </style>
+            .Page {
+                padding: calc(var(--handle-height) + 20px) 20px 40px;
+            }
+
+            .VideoGrid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .VideoGrid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="Page">
 
-  <!-- TITLE -->
-  <div class="ProjectTitle">
-    <h1>Project Interesting Mundane Tasks</h1>
-  </div>
-
-  <!-- PARAGRAPH 1 -->
-  <p>
-    Project Interesting Mundane Tasks (IMT) is a job simulator game made in Unreal Engine 5.6 for my Final Year Project at
-    University. This game is based around the question of "How do I make mundane tasks interesting and engaging?".<br><br>
-    This project allowed me to explore how developers retain player's attention when the task at hand is uninteresting and boring.
-  </p>
-
-  <!-- GITHUB LINK -->
-  <div class="ProjectLink">
-    <a href="https://github.com/enkelcipa/FYP" target="_blank">
-      View GitHub Repository
-    </a>
-  </div>
-
-  <!-- GAMEPLAY VIDEO -->
-  <div class="ProjectVideo">
-    <video autoplay muted loop controls>
-      <source src="Project IMT/FYPGameplayVideo.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <!-- PARAGRAPH 2 -->
-  <h1>Tasks</h1>
-  <p>
-    The main gameplay loop involves the player running around the map completing various tasks that are assigned
-    randomly. These tasks require the player to complete various minigames to complete the task. <br><br>
-    These minigames are comprised of:<br>
-    <div class="VideoGrid">
-      <div class="VideoGrid-item">
-        <video autoplay muted loop controls>
-          <source src="Project IMT/FYPConnectingWires.mp4" type="video/mp4">
-        </video>
-        <p>Connecting a New PC to the Network<br>Connecting Wires</p>
-      </div>
-      <div class="VideoGrid-item">
-        <video autoplay muted loop controls>
-          <source src="Project IMT/FYPDiagnosingSystemError.mp4" type="video/mp4">
-        </video>
-        <p>Diagnosing System Errors<br>Quick Time Events</p>
-      </div>
-      <div class="VideoGrid-item">
-        <video autoplay muted loop controls>
-          <source src="Project IMT/FYPAcceptingMail.mp4" type="video/mp4">
-        </video>
-        <p>Accepting Mail Delivery<br>Press and Hold</p>
-      </div>
-      <div class="VideoGrid-item">
-        <video autoplay muted loop controls>
-          <source src="Project IMT/FYPSmokeBreak.mp4" type="video/mp4">
-        </video>
-        <p>Smoking<br>Dragging Objects, Quick Time Events, Press and Hold</p>
-      </div>
-      <div class="VideoGrid-item">
-        <video autoplay muted loop controls>
-          <source src="Project IMT/FYPMakingCoffee.mp4" type="video/mp4">
-        </video>
-        <p>Making Coffee<br>Dragging Objects</p>
-      </div>
-      <div class="VideoGrid-item">
-        <video autoplay muted loop controls>
-          <source src="Project IMT/FYPBathroomBreak.mp4" type="video/mp4">
-        </video>
-        <p>Going to the Bathroom<br>Press and Hold</p>
-      </div>
+    <!-- TITLE -->
+    <div class="ProjectTitle">
+        <h1>Project Interesting Mundane Tasks</h1>
     </div>
 
-  <!-- PARAGRAPH 3 -->
-  <h1>Resources</h1>
-  <p>
-    In addition to various minigames, I implemented 3 resource bars that the player had to manage in order to be able 
-    to complete the game:
-  </p>
-  <p>
-    Alertness<br>
-    Drains slowly as time passes.<br>
-    The player's movement speed is depended on how full the Alertness Bar is.<br>
-    When the bar is fully depleted the player becomes incapacitated and a game over is displayed.
-  </p>
-  <p>
-    Shortcomings<br>
-    Drains slowly as time passes.<br>
-    This bar acts as a multiplier for the Stress Bar.<br>
-    The more it fills, the faster the Stress Bar fills.
-  </p>
-  <p>
-    Stress<br>
-    Increases slowly as time passes.<br>
-    Certain actions cause this bar to increase.<br>
-    The player is stopped at random intervals the more this bar is filled.<br>
-    When this bar is filled, the player becomes enraged and a game over is displayed.
-  </p>
+    <!-- PARAGRAPH 1 -->
+    <p>
+        Project Interesting Mundane Tasks (IMT) is a job simulator game made in Unreal Engine 5.6 for my Final Year
+        Project at
+        University. This game is based around the question of "How do I make mundane tasks interesting and
+        engaging?".<br><br>
+        This project allowed me to explore how developers retain player's attention when the task at hand is
+        uninteresting and boring.
+    </p>
 
-  <p>
-    These resources add to the engagement of the player as now they have to juggle the completion of tasks alongside
-    the management of resources that could cause them to fail entirely.
-  </p>
+    <!-- GITHUB LINK -->
+    <div class="ProjectLink">
+        <a href="https://github.com/enkelcipa/FYP" target="_blank">
+            View GitHub Repository
+        </a>
+    </div>
+
+    <!-- GAMEPLAY VIDEO -->
+    <div class="ProjectVideo">
+        <video autoplay muted loop controls>
+            <source src="Project IMT/FYPGameplayVideo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- PARAGRAPH 2 -->
+    <h1>Tasks</h1>
+    <p>
+        The main gameplay loop involves the player running around the map completing various tasks that are assigned
+        randomly. These tasks require the player to complete various minigames to complete the task. <br><br>
+        These minigames are comprised of:<br>
+    <div class="VideoGrid">
+        <div class="VideoGrid-item">
+            <video autoplay muted loop controls>
+                <source src="Project IMT/FYPConnectingWires.mp4" type="video/mp4">
+            </video>
+            <p>Connecting a New PC to the Network<br>Connecting Wires</p>
+        </div>
+        <div class="VideoGrid-item">
+            <video autoplay muted loop controls>
+                <source src="Project IMT/FYPDiagnosingSystemError.mp4" type="video/mp4">
+            </video>
+            <p>Diagnosing System Errors<br>Quick Time Events</p>
+        </div>
+        <div class="VideoGrid-item">
+            <video autoplay muted loop controls>
+                <source src="Project IMT/FYPAcceptingMail.mp4" type="video/mp4">
+            </video>
+            <p>Accepting Mail Delivery<br>Press and Hold</p>
+        </div>
+        <div class="VideoGrid-item">
+            <video autoplay muted loop controls>
+                <source src="Project IMT/FYPSmokeBreak.mp4" type="video/mp4">
+            </video>
+            <p>Smoking<br>Dragging Objects, Quick Time Events, Press and Hold</p>
+        </div>
+        <div class="VideoGrid-item">
+            <video autoplay muted loop controls>
+                <source src="Project IMT/FYPMakingCoffee.mp4" type="video/mp4">
+            </video>
+            <p>Making Coffee<br>Dragging Objects</p>
+        </div>
+        <div class="VideoGrid-item">
+            <video autoplay muted loop controls>
+                <source src="Project IMT/FYPBathroomBreak.mp4" type="video/mp4">
+            </video>
+            <p>Going to the Bathroom<br>Press and Hold</p>
+        </div>
+    </div>
+
+    <!-- PARAGRAPH 3 -->
+    <h1>Resources</h1>
+    <p>
+        In addition to various minigames, I implemented 3 resource bars that the player had to manage in order to be
+        able
+        to complete the game:
+    </p>
+    <p>
+        Alertness<br>
+        Drains slowly as time passes.<br>
+        The player's movement speed is depended on how full the Alertness Bar is.<br>
+        When the bar is fully depleted the player becomes incapacitated and a game over is displayed.
+    </p>
+    <p>
+        Shortcomings<br>
+        Drains slowly as time passes.<br>
+        This bar acts as a multiplier for the Stress Bar.<br>
+        The more it fills, the faster the Stress Bar fills.
+    </p>
+    <p>
+        Stress<br>
+        Increases slowly as time passes.<br>
+        Certain actions cause this bar to increase.<br>
+        The player is stopped at random intervals the more this bar is filled.<br>
+        When this bar is filled, the player becomes enraged and a game over is displayed.
+    </p>
+
+    <p>
+        These resources add to the engagement of the player as now they have to juggle the completion of tasks alongside
+        the management of resources that could cause them to fail entirely.
+    </p>
 </div>
 
 <!-- MENU -->

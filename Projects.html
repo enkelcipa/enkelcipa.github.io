@@ -1,252 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="menu.css">
     <style>
-:root {
-  --hex-size: clamp(70px, 10vw, 140px);
-  --hex-gap: clamp(8px, 1.5vw, 18px);
-  --handle-height: 70px;
-}
+        :root {
+            --hex-size: clamp(70px, 10vw, 140px);
+            --hex-gap: clamp(8px, 1.5vw, 18px);
+            --handle-height: 70px;
+        }
 
-/* FONT */
-@font-face {
-  font-family: "UD Digi Kyokasho";
-  src: url("UD Digi Kyokasho NP-B.ttf");
-}
+        /* FONT */
+        @font-face {
+            font-family: "UD Digi Kyokasho";
+            src: url("UD Digi Kyokasho NP-B.ttf");
+        }
 
-/* =========================
-   BASE LAYOUT
-========================= */
+        /* =========================
+           BASE LAYOUT
+        ========================= */
 
-body {
-  background-color: #4a281c;
-  background-image: url("PageBackground.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center;
+        body {
+            background-color: #4a281c;
+            background-image: url("PageBackground.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-position: center;
 
-  margin: 0;
-  min-height: 100vh;
+            margin: 0;
+            min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
 
-body.menu-open {
-  overflow: hidden;
-}
+        body.menu-open {
+            overflow: hidden;
+        }
 
-body.menu-open {
-  overflow: hidden;
-}
+        body.menu-open {
+            overflow: hidden;
+        }
 
-.Page
-{
-  width: 100%;
-  max-width: 1200px;
-  padding: 60px 20px 40px;
-  box-sizing: border-box;
+        .Page {
+            width: 100%;
+            max-width: 1200px;
+            padding: 60px 20px 40px;
+            box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  gap: 30px;
-}
-      
-/* =========================
-   TITLE
-========================= */
-.Title {
-  text-align: center;
-}
-      
-.Title h1 {
-  font-size: 80px;
-  margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  line-height: 1.6;
- 
-  text-shadow:
-    -3px -3px 5px #4A281C,
-    3px -3px 5px #4A281C,
-    -3px 3px 5px #4A281C,
-    3px 3px 5px #4A281C;
-}
-      
-/* =========================
-   PROJECT GRID
-========================= */
-.ProjectGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  
-  width: 100%;
-  max-width: 1200px;
-  padding: 40px 20px;
-  box-sizing: border-box;
-}
+            gap: 30px;
+        }
 
-/* =========================
-   Project Item
-========================= */
-      
-.ProjectItem {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;  
-}
+        /* =========================
+           TITLE
+        ========================= */
+        .Title {
+            text-align: center;
+        }
 
-.ProjectItem a,
-.ProjectItem img,
-.ProjectText
-{
-  width: 100%;
-  max-width: 300px;
-}
-      
-.ProjectItem a
-{
-  display: block;
-}
-      
-.ProjectItem img
-{
-  width: 100%;
-  max-width: 300px;
-  height: 200px;
-  object-fit: contain;
-  
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
-      
-.ProjectItem a:hover img
-{
-  transform: scale(1.05);
-}
+        .Title h1 {
+            font-size: 80px;
+            margin: 0;
 
-/* TEXT UNDER IMAGE */
-.ProjectText
-{
-  margin-top: 12px;
-  text-align: center;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            line-height: 1.6;
 
-.ProjectText h2
-{
-  margin: 0;
-  font-size: 20px;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-.ProjectText p
-{
-  margin: 4px 0 0;
-  font-size: 14px;
+        /* =========================
+           PROJECT GRID
+        ========================= */
+        .ProjectGrid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
-      
-@media (max-width: 768px)
-{
-  .ProjectGrid
-  {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
 
-  .ProjectItem img
-  {
-    max-width: 260px;
-  }
-  
-  .Page
-  {
-    padding-top:calc(var(--handle-height) + 30px); 
-  }
-}
-      
-</style> </head>
-  <body>
-    <div class="Page">
-      <!-- PAGE CONTENT -->
-      <div class="Title">
+        /* =========================
+           Project Item
+        ========================= */
+
+        .ProjectItem {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ProjectItem a,
+        .ProjectItem img,
+        .ProjectText {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .ProjectItem a {
+            display: block;
+        }
+
+        .ProjectItem img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: contain;
+
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .ProjectItem a:hover img {
+            transform: scale(1.05);
+        }
+
+        /* TEXT UNDER IMAGE */
+        .ProjectText {
+            margin-top: 12px;
+            text-align: center;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .ProjectText h2 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .ProjectText p {
+            margin: 4px 0 0;
+            font-size: 14px;
+
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .ProjectGrid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .ProjectItem img {
+                max-width: 260px;
+            }
+
+            .Page {
+                padding-top: calc(var(--handle-height) + 30px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="Page">
+    <!-- PAGE CONTENT -->
+    <div class="Title">
         <h1>Projects</h1>
-      </div>
-      <!-- PROJECT GRID -->
-      <div class="ProjectGrid">
+    </div>
+    <!-- PROJECT GRID -->
+    <div class="ProjectGrid">
         <!-- MMO Class Design -->
         <div class="ProjectItem">
-		<a href="MMOClassDesign.html">
-		<img src="MMO Class Design/MMOFrameworkThumbnail.png" alt="MMO Class Design"> </a>
-          <div class="ProjectText">
-            <p>Creating a simple MMO framework in Unreal Engine using the Gameplay Ability
-			System plugin to explore class design inside an MMO.</p>
-          </div>
-        </div>	  
+            <a href="MMOClassDesign.html">
+                <img src="MMO Class Design/MMOFrameworkThumbnail.png" alt="MMO Class Design"> </a>
+            <div class="ProjectText">
+                <p>Creating a simple MMO framework in Unreal Engine using the Gameplay Ability
+                    System plugin to explore class design inside an MMO.</p>
+            </div>
+        </div>
         <!-- Scrapped Up! -->
         <div class="ProjectItem">
-          <a href="GetScrapped.html">
-            <img src="Get Scrapped/Get Scrapped! Thumbnail.png" alt="Get Scrapped!"> </a>
-          <div class="ProjectText">
-            <p>4 player couch co-op party game where players collect parts, build a robot and
-			fight in the arena against each other, built inside Unreal Engine.</p>
-          </div>
+            <a href="GetScrapped.html">
+                <img src="Get Scrapped/Get Scrapped! Thumbnail.png" alt="Get Scrapped!"> </a>
+            <div class="ProjectText">
+                <p>4 player couch co-op party game where players collect parts, build a robot and
+                    fight in the arena against each other, built inside Unreal Engine.</p>
+            </div>
         </div>
         <!-- C++ Survivorslike -->
         <div class="ProjectItem">
-          <a href="SurviveTheSkellies.html" >
-            <img src="Survive the Skellies/Survive the Skellies.png" alt="Survive the Skellies"> </a>
-          <div class="ProjectText">
-            <p>A simple survivors-like game created in Unreal Engine primarily using C++.</p>
-          </div>
+            <a href="SurviveTheSkellies.html">
+                <img src="Survive the Skellies/Survive the Skellies.png" alt="Survive the Skellies"> </a>
+            <div class="ProjectText">
+                <p>A simple survivors-like game created in Unreal Engine primarily using C++.</p>
+            </div>
         </div>
         <!-- Hexpansion -->
         <div class="ProjectItem">
-		<a href="Hexpansion.html">
-		<img src="Hexpansion/HexpansionThumbnail.png" alt="Hexpansion"> </a>
-          <div class="ProjectText">
-            <p>City-builder game on a hex-based grid in Unreal Engine, with some simple
-			procedural generation to create the map.</p>
-          </div>
-        </div>		
+            <a href="Hexpansion.html">
+                <img src="Hexpansion/HexpansionThumbnail.png" alt="Hexpansion"> </a>
+            <div class="ProjectText">
+                <p>City-builder game on a hex-based grid in Unreal Engine, with some simple
+                    procedural generation to create the map.</p>
+            </div>
+        </div>
         <!-- Project IMT -->
         <div class="ProjectItem">
-		<a href="ProjectIMT.html">
-		<img src="Project IMT/ProjectIMTThumbnail.png" alt="Project IMT"> </a>
-          <div class="ProjectText">
-            <p>Exploration of how to make mundane tasks inside of games more interesting
-			and engaging to players, built in Unreal Engine.</p>
-          </div>
+            <a href="ProjectIMT.html">
+                <img src="Project IMT/ProjectIMTThumbnail.png" alt="Project IMT"> </a>
+            <div class="ProjectText">
+                <p>Exploration of how to make mundane tasks inside of games more interesting
+                    and engaging to players, built in Unreal Engine.</p>
+            </div>
         </div>
-		<!-- Amalgamage -->
+        <!-- Amalgamage -->
         <div class="ProjectItem">
-		<a href="Amalgamage.html">
-		<img src="Amalgamage/AmalgamageThumbnail.png" alt="Amalgamage"> </a>
-          <div class="ProjectText">
-            <p>Turn based combat game where the player fights using a party of slimes with
-              the ability to merge and split, built in Unreal Engine.</p>
-          </div>
+            <a href="Amalgamage.html">
+                <img src="Amalgamage/AmalgamageThumbnail.png" alt="Amalgamage"> </a>
+            <div class="ProjectText">
+                <p>Turn based combat game where the player fights using a party of slimes with
+                    the ability to merge and split, built in Unreal Engine.</p>
+            </div>
         </div>
-      </div>
     </div>
-    
-    <!-- Menu Mount Point -->
-    <div id="menu-container"></div>
-    <script src="menu.js" defer="defer"></script>
-  </body>
+</div>
+
+<!-- Menu Mount Point -->
+<div id="menu-container"></div>
+<script src="menu.js" defer="defer"></script>
+</body>
 </html>

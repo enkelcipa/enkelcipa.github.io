@@ -1,193 +1,272 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Name</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name</title>
 
-  <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="menu.css">
 
-  <style>
-:root {
-  --handle-height: 70px;
-}
+    <style>
+        :root {
+            --handle-height: 70px;
+        }
 
-/* =========================
-   BASE LAYOUT
-========================= */
+        /* =========================
+           BASE LAYOUT
+        ========================= */
 
-body {
-  background-color: #4a281c;
-  background-image: url("PageBackground.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center;
+        body {
+            background-color: #4a281c;
+            background-image: url("PageBackground.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-position: center;
 
-  margin: 0;
-  min-height: 100vh;
+            margin: 0;
+            min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-}
+            display: flex;
+            justify-content: center;
+        }
 
-/* =========================
-   PAGE CONTAINER
-========================= */
+        /* =========================
+           PAGE CONTAINER
+        ========================= */
 
-.Page {
-  width: 100%;
-  max-width: 900px;
-  padding: 80px 20px 60px;
-  box-sizing: border-box;
+        .Page {
+            width: 100%;
+            max-width: 900px;
+            padding: 80px 20px 60px;
+            box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  gap: 28px;
-  text-align: center;
-}
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-/* =========================
-   TITLE TILE
-========================= */
+            gap: 28px;
+            text-align: center;
+        }
 
-.ProjectTitle {
-  text-align: center;
-}
+        /* =========================
+           TITLE TILE
+        ========================= */
 
-.ProjectTitle h1 {
-  font-size: clamp(32px, 6vw, 64px);
-  margin: 0;
-}
+        .ProjectTitle {
+            text-align: center;
+        }
 
-/* =========================
-   TEXT BLOCKS
-========================= */
+        .ProjectTitle h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            margin: 0;
 
-p {
-  margin: 0;
-  line-height: 1.6;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-/* =========================
-   LINKS
-========================= */
+        /* =========================
+           TEXT BLOCKS
+        ========================= */
 
-.ProjectLink a {
-  display: inline-block;
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
-}
+        h1 {
+            margin: 0;
+            font-size: clamp(16px, 6vw, 32px);
 
-/* =========================
-   VIDEO
-========================= */
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-.ProjectVideo {
-  width: 100%;
-}
+        p {
+            margin: 0;
+            line-height: 1.6;
 
-.ProjectVideo iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 12px;
-}
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-/* =========================
-   IMAGE GALLERY
-========================= */
+        .TextTable {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
 
-.ProjectImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
+        .TextTable-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: rgba(44 24 17 / 0.8);
+            border: none;
+            border-radius: 12px;
+        }
 
-.ProjectImages img {
-  width: 100%;
-  border-radius: 10px;
-}
+        .TextTable-item p {
+            font-size: 14px;
+            color: white;
+            margin: 0;
+            background: none;
+        }
 
-/* =========================
-   MOBILE MENU OFFSET
-========================= */
+        /* =========================
+           LINKS
+        ========================= */
 
-@media (max-width: 768px)
-{
-  body
-  {
-    background-size: cover;
-	background-position: center;
-	background-repeat: repeat;
-	background-attachment: scroll;
-  }
-  .Page
-  {
-    padding: calc(var(--handle-height) + 20px) 20px 40px;
-  }
-}
-  </style>
+        .ProjectLink a {
+            display: inline-block;
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
+
+        /* =========================
+           VIDEO
+        ========================= */
+
+        .ProjectVideo {
+            width: 100%;
+        }
+
+        .ProjectVideo iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+        }
+
+        /* =========================
+           IMAGE GALLERY
+        ========================= */
+
+        .ProjectImages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ProjectImages img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .ProjectImages img.extrasmall {
+            width: 20%;
+            justify-self: center;
+        }
+
+        .ProjectImages img.small {
+            width: 40%;
+            justify-self: center;
+        }
+
+        .ProjectImages img.medium {
+            width: 60%;
+            justify-self: center;
+        }
+
+        .ProjectImages img.large {
+            width: 80%;
+            justify-self: center;
+        }
+
+        /* =========================
+           MOBILE MENU OFFSET
+        ========================= */
+
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+
+            .Page {
+                padding: calc(var(--handle-height) + 20px) 20px 40px;
+            }
+
+            .TextTable {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .TextTable {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="Page">
 
-  <!-- TILE -->
-  <div class="ProjectTitle">
-    <h1>Project Name</h1>
-  </div>
+    <!-- TILE -->
+    <div class="ProjectTitle">
+        <h1>Project Name</h1>
+    </div>
 
-  <!-- PARAGRAPH 1 -->
-  <p>
-    Paragraph 1 — introduction to the project, what it is, and the core idea.
-  </p>
+    <!-- PARAGRAPH 1 -->
+    <p>
+        Paragraph 1 — introduction to the project, what it is, and the core idea.
+    </p>
 
-  <!-- GITHUB LINK -->
-  <div class="ProjectLink">
-    <a href="https://github.com/your-repo" target="_blank">
-      View GitHub Repository
-    </a>
-  </div>
+    <!-- GITHUB LINK -->
+    <div class="ProjectLink">
+        <a href="https://github.com/your-repo" target="_blank">
+            View GitHub Repository
+        </a>
+    </div>
 
-  <!-- GAMEPLAY VIDEO -->
-  <div class="ProjectVideo">
-    <iframe 
-      src="https://www.youtube.com/embed/VIDEO_ID"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <!-- GAMEPLAY VIDEO -->
+    <div class="ProjectVideo">
+        <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID"
+                allowfullscreen>
+        </iframe>
+    </div>
 
-  <!-- PARAGRAPH 2 -->
-  <p>
-    Paragraph 2 — deeper explanation of systems or design.
-  </p>
+    <!-- PARAGRAPH 2 -->
+    <p>
+        Paragraph 2 — deeper explanation of systems or design.
+    </p>
 
-  <!-- PARAGRAPH 3 -->
-  <p>
-    Paragraph 3 — technical breakdown, mechanics, or implementation details.
-  </p>
+    <!-- PARAGRAPH 3 -->
+    <p>
+        Paragraph 3 — technical breakdown, mechanics, or implementation details.
+    </p>
 
-  <!-- IMAGE SPACE -->
-  <div class="ProjectImages">
-    <img src="ProjectTemp.png">
-    <img src="ProjectTemp.png">
-    <img src="ProjectTemp.png">
-  </div>
+    <!-- IMAGE SPACE -->
+    <div class="ProjectImages">
+        <img src="ProjectTemp.png">
+        <img src="ProjectTemp.png">
+        <img src="ProjectTemp.png">
+    </div>
 
-  <!-- PARAGRAPH 4 -->
-  <p>
-    Paragraph 4 — challenges, problems faced, solutions.
-  </p>
+    <!-- PARAGRAPH 4 -->
+    <p>
+        Paragraph 4 — challenges, problems faced, solutions.
+    </p>
 
-  <!-- PARAGRAPH 5 -->
-  <p>
-    Paragraph 5 — reflection, outcome, what you learned.
-  </p>
+    <!-- PARAGRAPH 5 -->
+    <p>
+        Paragraph 5 — reflection, outcome, what you learned.
+    </p>
 
 </div>
 

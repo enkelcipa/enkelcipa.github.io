@@ -1,344 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survive the Skellies</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survive the Skellies</title>
 
-  <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="menu.css">
 
-  <style>
-:root {
-  --handle-height: 70px;
-}
+    <style>
+        :root {
+            --handle-height: 70px;
+        }
 
-/* =========================
-   BASE LAYOUT
-========================= */
+        /* =========================
+           BASE LAYOUT
+        ========================= */
 
-body {
-  background-color: #4a281c;
-  background-image: url("PageBackground.png");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: contain;
-  background-position: center;
+        body {
+            background-color: #4a281c;
+            background-image: url("PageBackground.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: contain;
+            background-position: center;
 
-  margin: 0;
-  min-height: 100vh;
+            margin: 0;
+            min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-}
+            display: flex;
+            justify-content: center;
+        }
 
-/* =========================
-   PAGE CONTAINER
-========================= */
+        /* =========================
+           PAGE CONTAINER
+        ========================= */
 
-.Page {
-  width: 100%;
-  max-width: 900px;
-  padding: 80px 20px 60px;
-  box-sizing: border-box;
+        .Page {
+            width: 100%;
+            max-width: 900px;
+            padding: 80px 20px 60px;
+            box-sizing: border-box;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-  gap: 28px;
-  text-align: center;
-}
+            gap: 28px;
+            text-align: center;
+        }
 
-/* =========================
-   TITLE TILE
-========================= */
+        /* =========================
+           TITLE TILE
+        ========================= */
 
-.ProjectTitle {
-  text-align: center;
-}
+        .ProjectTitle {
+            text-align: center;
+        }
 
-.ProjectTitle h1 {
-  font-size: clamp(32px, 6vw, 64px);
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  margin: 0;
+        .ProjectTitle h1 {
+            font-size: clamp(32px, 6vw, 64px);
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
+            margin: 0;
 
-  text-shadow:
-          -3px -3px 5px #4A281C,
-          3px -3px 5px #4A281C,
-          -3px 3px 5px #4A281C,
-          3px 3px 5px #4A281C;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-/* =========================
-   TEXT BLOCKS
-========================= */
+        /* =========================
+           TEXT BLOCKS
+        ========================= */
 
-h1
-{
-  margin: 0;
-  font-size: clamp(16px, 6vw, 32px);
+        h1 {
+            margin: 0;
+            font-size: clamp(16px, 6vw, 32px);
 
-  text-shadow:
-    -3px -3px 5px #4A281C,
-    3px -3px 5px #4A281C,
-    -3px 3px 5px #4A281C,
-    3px 3px 5px #4A281C;
-}
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
 
-p
-{
-  margin: 0;
-  line-height: 1.6;
+        p {
+            margin: 0;
+            line-height: 1.6;
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-.TextTable
-{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
+        .TextTable {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
 
-.TextTable-item
-{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background: rgba(44 24 17 / 0.8);
-  border: none;
-  border-radius: 12px;
-}
+        .TextTable-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: rgba(44 24 17 / 0.8);
+            border: none;
+            border-radius: 12px;
+        }
 
-.TextTable-item p
-{
-  font-size: 14px;
-  color: white;
-  margin: 0;
-  background: none;
-}
+        .TextTable-item p {
+            font-size: 14px;
+            color: white;
+            margin: 0;
+            background: none;
+        }
 
-/* =========================
-   LINKS
-========================= */
+        /* =========================
+           LINKS
+        ========================= */
 
-.ProjectLink a {
-  display: inline-block;
-  color: white;
-  text-decoration: underline;
-  font-weight: bold;
+        .ProjectLink a {
+            display: inline-block;
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
 
-  background: rgba(44 24 17 / 0.8);
-  padding: 12px 12px;
-  border-radius: 12px;
-}
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
 
-/* =========================
-   VIDEO
-========================= */
+        /* =========================
+           VIDEO
+        ========================= */
 
-.ProjectVideo {
-  width: 100%;
-}
+        .ProjectVideo {
+            width: 100%;
+        }
 
-.ProjectVideo iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 12px;
-}
+        .ProjectVideo iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+        }
 
-/* =========================
-   IMAGE GALLERY
-========================= */
+        /* =========================
+           IMAGE GALLERY
+        ========================= */
 
-.ProjectImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  justify-content: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
+        .ProjectImages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-.ProjectImages img {
-  width: 100%;
-  border-radius: 10px;
-}
+        .ProjectImages img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-.ProjectImages img.extrasmall {
-  width: 20%;
-  justify-self: center;
-}
+        .ProjectImages img.extrasmall {
+            width: 20%;
+            justify-self: center;
+        }
 
-.ProjectImages img.small {
-  width: 40%;
-  justify-self: center;
-}
+        .ProjectImages img.small {
+            width: 40%;
+            justify-self: center;
+        }
 
-.ProjectImages img.medium {
-  width: 60%;
-  justify-self: center;
-}
+        .ProjectImages img.medium {
+            width: 60%;
+            justify-self: center;
+        }
 
-.ProjectImages img.large {
-  width: 80%;
-  justify-self: center;
-}
+        .ProjectImages img.large {
+            width: 80%;
+            justify-self: center;
+        }
 
-/* =========================
-   MOBILE MENU OFFSET
-========================= */
+        /* =========================
+           MOBILE MENU OFFSET
+        ========================= */
 
-@media (max-width: 768px)
-{
-  body
-  {
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    background-attachment: scroll;
-  }
-  
-  .Page
-  {
-    padding: calc(var(--handle-height) + 20px) 20px 40px;
-  }
-  
-  .TextTable
-  {
-    grid-template-columns: 1fr;
-  }
-}
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+                background-position: center;
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
 
-@media (max-width: 480px)
-{
-  .TextTable
-  {
-    grid-template-columns: 1fr;
-  }
-}
-  </style>
+            .Page {
+                padding: calc(var(--handle-height) + 20px) 20px 40px;
+            }
+
+            .TextTable {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .TextTable {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <div class="Page">
 
-  <!-- TILE -->
-  <div class="ProjectTitle">
-    <h1>Survive the Skellies</h1>
-  </div>
+    <!-- TILE -->
+    <div class="ProjectTitle">
+        <h1>Survive the Skellies</h1>
+    </div>
 
-  <!-- PARAGRAPH 1 -->
-  <p>
-    Survive the Skellies is a Survivors-like game built in Unreal Engine 5.6 for my C++ for Designers unit at University.
-    The goal was to use C++ in Unreal Engine to create a designer friendly game, with classes that could be used to create
-    actors with functionality in blueprint. I designed and implemented systems for a survivors-like game, weapons,
-    enemy spawning in waves, EXP and level up systems and stat scaling.
-  </p>
+    <!-- PARAGRAPH 1 -->
+    <p>
+        Survive the Skellies is a Survivors-like game built in Unreal Engine 5.6 for my C++ for Designers unit at
+        University.
+        The goal was to use C++ in Unreal Engine to create a designer friendly game, with classes that could be used to
+        create
+        actors with functionality in blueprint. I designed and implemented systems for a survivors-like game including
+        weapons, enemy spawning in waves, EXP and level up systems and stat scaling.
+    </p>
 
-  <!-- GITHUB LINK -->
-  <div class="ProjectLink">
-    <a href="https://github.com/enkelcipa/C-for-Game-Designers" target="_blank">
-      View GitHub Repository
-    </a>
-  </div>
+    <!-- GITHUB LINK -->
+    <div class="ProjectLink">
+        <a href="https://github.com/enkelcipa/C-for-Game-Designers" target="_blank">
+            View GitHub Repository
+        </a>
+    </div>
 
-  <!-- GAMEPLAY VIDEO -->
-  <div class="ProjectVideo">
-    <iframe
-      src="https://www.youtube.com/embed/f0LYzQkh7p0?autoplay=1&mute=1"
-      allowfullscreen>
-    </iframe>
-  </div>
+    <!-- GAMEPLAY VIDEO -->
+    <div class="ProjectVideo">
+        <iframe
+                src="https://www.youtube.com/embed/f0LYzQkh7p0?autoplay=1&mute=1"
+                allowfullscreen>
+        </iframe>
+    </div>
 
-  <!-- PARAGRAPH 2 -->
-  <h1>Waves and Enemy Spawning</h1>
-  <p>
-    Enemy spawning is handled through my Enemy Spawn Manager class.
-    This class handled what enemies to spawn, how many to spawn, how frequently and the chance of the enemy to spawn.
-    I designed it in this was so that I could add as many enemies as I wanted. However, I stuck to 2 for the sake of
-    simplicity.<br>
-    When a wave is completed there is a delay before the next wave spawns. As the waves increment, the amount of enemies
-    spawned in the next wave increments and the enemies scale in power, they become bulkier and deal more damage to the player.
-  </p>
+    <!-- PARAGRAPH 2 -->
+    <h1>Waves and Enemy Spawning</h1>
+    <p>
+        Enemy spawning is handled through my Enemy Spawn Manager class.
+        This class handled what enemies to spawn, how many to spawn, how frequently and the chance of the enemy to
+        spawn.
+        I designed it in this was so that I could add as many enemies as I wanted. However, I stuck to 2 for the sake of
+        simplicity.<br>
+        When a wave is completed there is a delay before the next wave spawns. As the waves increment, the amount of
+        enemies
+        spawned in the next wave increments and the enemies scale in power, they become bulkier and deal more damage to
+        the player.
+    </p>
 
-  <!-- PARAGRAPH 3 -->
-  <h1>Weapons</h1>
-  <p>
-    Survivors-like games have a wide variety of weapons to choose for players.
-    For this project, I implemented 3 weapons:
-  </p>
-  <div class="TextTable">
-    <div class="TextTable-item">
-      <p>
-        Aura Weapon<br>
-        Periodically pulses, dealing damage to all enemies caught in the pulse.
-      </p>
+    <!-- PARAGRAPH 3 -->
+    <h1>Weapons</h1>
+    <p>
+        Survivors-like games have a wide variety of weapons to choose for players.
+        For this project, I implemented 3 weapons:
+    </p>
+    <div class="TextTable">
+        <div class="TextTable-item">
+            <p>
+                Aura Weapon<br>
+                Periodically pulses, dealing damage to all enemies caught in the pulse.
+            </p>
+        </div>
+        <div class="TextTable-item">
+            <p>
+                Projectile Weapon<br>
+                Periodically fires a projectile at the closest enemy within its range.
+            </p>
+        </div>
+        <div class="TextTable-item">
+            <p>
+                Lightning Weapon<br>
+                Periodically strikes a random enemy with lightning.
+            </p>
+        </div>
     </div>
-    <div class="TextTable-item">
-      <p>
-        Projectile Weapon<br>
-        Periodically fires a projectile at the closest enemy within its range.
-      </p>
-    </div>
-    <div class="TextTable-item">
-      <p>
-        Lightning Weapon<br>
-        Periodically strikes a random enemy with lightning.
-      </p>
-    </div>
-  </div>
 
-  <!-- PARAGRAPH 4 -->
-  <h1>EXP and Leveling</h1>
-  <p>
-    As the player defeats enemies, EXP is dropped. When the player collects enough EXP, a level up is triggered.
-    The player is then given the opportunity to upgrade 1 of their stats.
-  </p>
-  <div class="TextTable">
-    <div class="TextTable-item">
-      <p>
-        Max Health<br>
-        Increases the maximum health of the player.
-      </p>
+    <!-- PARAGRAPH 4 -->
+    <h1>EXP and Leveling</h1>
+    <p>
+        As the player defeats enemies, EXP is dropped. When the player collects enough EXP, a level up is triggered.
+        The player is then given the opportunity to upgrade 1 of their stats.
+    </p>
+    <div class="TextTable">
+        <div class="TextTable-item">
+            <p>
+                Max Health<br>
+                Increases the maximum health of the player.
+            </p>
+        </div>
+        <div class="TextTable-item">
+            <p>
+                Damage<br>
+                Increases the damage dealt by weapons.
+            </p>
+        </div>
+        <div class="TextTable-item">
+            <p>
+                Armour<br>
+                Reduces incoming damage by a flat amount.
+            </p>
+        </div>
+        <div class="TextTable-item">
+            <p>
+                Cooldown<br>
+                Increases the rate at which weapons fire.
+            </p>
+        </div>
+        <div class="TextTable-item">
+            <p>
+                Movement Speed<br>
+                Increases the speed at which the player can move.
+            </p>
+        </div>
+        <div class="TextTable-item">
+            <p>
+                Size<br>
+                Increases the range at which weapons target enemies.
+            </p>
+        </div>
     </div>
-    <div class="TextTable-item">
-      <p>
-        Damage<br>
-        Increases the damage dealt by weapons.
-      </p>
-    </div>
-    <div class="TextTable-item">
-      <p>
-        Armour<br>
-        Reduces incoming damage by a flat amount.
-      </p>
-    </div>
-    <div class="TextTable-item">
-      <p>
-        Cooldown<br>
-        Increases the rate at which weapons fire.
-      </p>
-    </div>
-    <div class="TextTable-item">
-      <p>
-        Movement Speed<br>
-        Increases the speed at which the player can move.
-      </p>
-    </div>
-    <div class="TextTable-item">
-      <p>
-        Size<br>
-        Increases the range at which weapons target enemies.
-      </p>
-    </div>
-  </div>
 </div>
 
 <!-- MENU -->
