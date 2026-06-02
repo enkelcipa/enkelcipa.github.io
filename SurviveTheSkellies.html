@@ -86,13 +86,40 @@ h1
     3px 3px 5px #4A281C;
 }
 
-p {
+p
+{
   margin: 0;
   line-height: 1.6;
 
   background: rgba(44 24 17 / 0.8);
   padding: 12px 12px;
   border-radius: 12px;
+}
+
+.TextTable
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.TextTable-item
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: rgba(44 24 17 / 0.8);
+  border: none;
+  border-radius: 12px;
+}
+
+.TextTable-item p
+{
+  font-size: 14px;
+  color: white;
+  margin: 0;
+  background: none;
 }
 
 /* =========================
@@ -118,7 +145,7 @@ p {
   width: 100%;
 }
 
-.ProjectVideo video {
+.ProjectVideo iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: none;
@@ -176,9 +203,23 @@ p {
     background-repeat: repeat;
     background-attachment: scroll;
   }
+  
   .Page
   {
     padding: calc(var(--handle-height) + 20px) 20px 40px;
+  }
+  
+  .TextTable
+  {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px)
+{
+  .TextTable
+  {
+    grid-template-columns: 1fr;
   }
 }
   </style>
@@ -210,28 +251,94 @@ p {
 
   <!-- GAMEPLAY VIDEO -->
   <div class="ProjectVideo">
-    <video autoplay muted loop controls>
-      <source src="" type="video/mp4">
-    </video>
+    <iframe
+      src="https://www.youtube.com/embed/f0LYzQkh7p0?autoplay=1&mute=1"
+      allowfullscreen>
+    </iframe>
   </div>
 
   <!-- PARAGRAPH 2 -->
   <h1>Waves and Enemy Spawning</h1>
   <p>
-    
+    Enemy spawning is handled through my Enemy Spawn Manager class.
+    This class handled what enemies to spawn, how many to spawn, how frequently and the chance of the enemy to spawn.
+    I designed it in this was so that I could add as many enemies as I wanted. However, I stuck to 2 for the sake of
+    simplicity.<br>
+    When a wave is completed there is a delay before the next wave spawns. As the waves increment, the amount of enemies
+    spawned in the next wave increments and the enemies scale in power, they become bulkier and deal more damage to the player.
   </p>
 
   <!-- PARAGRAPH 3 -->
   <h1>Weapons</h1>
   <p>
-    
+    Survivors-like games have a wide variety of weapons to choose for players.
+    For this project, I implemented 3 weapons:
   </p>
+  <div class="TextTable">
+    <div class="TextTable-item">
+      <p>
+        Aura Weapon<br>
+        Periodically pulses, dealing damage to all enemies caught in the pulse.
+      </p>
+    </div>
+    <div class="TextTable-item">
+      <p>
+        Projectile Weapon<br>
+        Periodically fires a projectile at the closest enemy within its range.
+      </p>
+    </div>
+    <div class="TextTable-item">
+      <p>
+        Lightning Weapon<br>
+        Periodically strikes a random enemy with lightning.
+      </p>
+    </div>
+  </div>
 
   <!-- PARAGRAPH 4 -->
-  <h1>Stat Scaling</h1>
+  <h1>EXP and Leveling</h1>
   <p>
-    
+    As the player defeats enemies, EXP is dropped. When the player collects enough EXP, a level up is triggered.
+    The player is then given the opportunity to upgrade 1 of their stats.
   </p>
+  <div class="TextTable">
+    <div class="TextTable-item">
+      <p>
+        Max Health<br>
+        Increases the maximum health of the player.
+      </p>
+    </div>
+    <div class="TextTable-item">
+      <p>
+        Damage<br>
+        Increases the damage dealt by weapons.
+      </p>
+    </div>
+    <div class="TextTable-item">
+      <p>
+        Armour<br>
+        Reduces incoming damage by a flat amount.
+      </p>
+    </div>
+    <div class="TextTable-item">
+      <p>
+        Cooldown<br>
+        Increases the rate at which weapons fire.
+      </p>
+    </div>
+    <div class="TextTable-item">
+      <p>
+        Movement Speed<br>
+        Increases the speed at which the player can move.
+      </p>
+    </div>
+    <div class="TextTable-item">
+      <p>
+        Size<br>
+        Increases the range at which weapons target enemies.
+      </p>
+    </div>
+  </div>
 </div>
 
 <!-- MENU -->
