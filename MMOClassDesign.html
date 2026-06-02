@@ -59,16 +59,60 @@
 
         .ProjectTitle h1 {
             font-size: clamp(32px, 6vw, 64px);
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
             margin: 0;
+
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
         }
 
         /* =========================
            TEXT BLOCKS
         ========================= */
 
+        h1 {
+            margin: 0;
+            font-size: clamp(16px, 6vw, 32px);
+
+            text-shadow: -3px -3px 5px #4A281C,
+            3px -3px 5px #4A281C,
+            -3px 3px 5px #4A281C,
+            3px 3px 5px #4A281C;
+        }
+
         p {
             margin: 0;
             line-height: 1.6;
+
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
+        }
+
+        .TextTable {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .TextTable-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: rgba(44 24 17 / 0.8);
+            border: none;
+            border-radius: 12px;
+        }
+
+        .TextTable-item p {
+            font-size: 14px;
+            color: white;
+            margin: 0;
+            background: none;
         }
 
         /* =========================
@@ -80,6 +124,10 @@
             color: white;
             text-decoration: underline;
             font-weight: bold;
+
+            background: rgba(44 24 17 / 0.8);
+            padding: 12px 12px;
+            border-radius: 12px;
         }
 
         /* =========================
@@ -105,11 +153,34 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .ProjectImages img {
             width: 100%;
             border-radius: 10px;
+        }
+
+        .ProjectImages img.extrasmall {
+            width: 20%;
+            justify-self: center;
+        }
+
+        .ProjectImages img.small {
+            width: 40%;
+            justify-self: center;
+        }
+
+        .ProjectImages img.medium {
+            width: 60%;
+            justify-self: center;
+        }
+
+        .ProjectImages img.large {
+            width: 80%;
+            justify-self: center;
         }
 
         /* =========================
@@ -127,6 +198,16 @@
             .Page {
                 padding: calc(var(--handle-height) + 20px) 20px 40px;
             }
+
+            .TextTable {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .TextTable {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -142,12 +223,14 @@
 
     <!-- PARAGRAPH 1 -->
     <p>
-        Paragraph 1 — introduction to the project, what it is, and the core idea.
+        This is a passion project where I create a single player MMO framework inside Unreal Engine 5.6 with the 
+        goal being to design and implement three classes using Final Fantasy 14 as my inspiration for the design
+        philosophy. For this project I intend to design and implement one tank, one healer and one dps class.
     </p>
 
     <!-- GITHUB LINK -->
     <div class="ProjectLink">
-        <a href="https://github.com/your-repo" target="_blank">
+        <a href="https://github.com/enkelcipa/SinglePlayerMMOFramework" target="_blank">
             View GitHub Repository
         </a>
     </div>
@@ -161,9 +244,15 @@
     </div>
 
     <!-- PARAGRAPH 2 -->
+    <h1>Healer</h1>
     <p>
-        Paragraph 2 — deeper explanation of systems or design.
+        My healer class is the first class I designed. It is my personal take on the Scholar job in Final Fantasy 14
+        leaning much heavier on the Battle Tactician theme that this job tries to take on. A Battle Tactician is
+        magical healer that adjusts their approach to an encounter based on the situation at hand. They manipulate 
+        various resources to execute abilities called Tactics, Measures and Paradigms and can manipulate their healing
+        spells to either apply a shield at the cost of healing power or apply a stronger heal.
     </p>
+    
 
     <!-- PARAGRAPH 3 -->
     <p>
