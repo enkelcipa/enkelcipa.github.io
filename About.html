@@ -1,10 +1,255 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>About</title>
-  </head>
-  <body>
-    <p>Page 1</p>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+
+  <link rel="stylesheet" href="menu.css">
+
+  <style>
+    :root {
+      --handle-height: 70px;
+    }
+
+    /* =========================
+       BASE LAYOUT
+    ========================= */
+
+    body {
+      background-color: #4a281c;
+      background-image: url("PageBackground.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+      background-position: center;
+
+      margin: 0;
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    /* =========================
+       PAGE CONTAINER
+    ========================= */
+
+    .Page {
+      width: 100%;
+      max-width: 900px;
+      padding: 80px 20px 60px;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      gap: 28px;
+      text-align: center;
+    }
+
+    /* =========================
+       TITLE TILE
+    ========================= */
+
+    .ProjectTitle {
+      text-align: center;
+    }
+
+    .ProjectTitle h1 {
+      font-size: clamp(32px, 6vw, 64px);
+      text-decoration: underline;
+      text-decoration-thickness: 4px;
+      margin: 0;
+
+      text-shadow: -3px -3px 5px #4A281C,
+      3px -3px 5px #4A281C,
+      -3px 3px 5px #4A281C,
+      3px 3px 5px #4A281C;
+    }
+
+    /* =========================
+       TEXT BLOCKS
+    ========================= */
+
+    h1 {
+      margin: 0;
+      font-size: clamp(16px, 6vw, 32px);
+
+      text-shadow: -3px -3px 5px #4A281C,
+      3px -3px 5px #4A281C,
+      -3px 3px 5px #4A281C,
+      3px 3px 5px #4A281C;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.6;
+
+      background: rgba(44 24 17 / 0.8);
+      padding: 12px 12px;
+      border-radius: 12px;
+    }
+
+    .TextTable {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .TextTable-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      background: rgba(44 24 17 / 0.8);
+      border: none;
+      border-radius: 12px;
+    }
+
+    .TextTable-item p {
+      font-size: 14px;
+      color: white;
+      margin: 0;
+      background: none;
+    }
+
+    /* =========================
+       LINKS
+    ========================= */
+
+    .ProjectLink a {
+      display: inline-block;
+      color: white;
+      text-decoration: underline;
+      font-weight: bold;
+
+      background: rgba(44 24 17 / 0.8);
+      padding: 12px 12px;
+      border-radius: 12px;
+    }
+
+    /* =========================
+       VIDEO
+    ========================= */
+
+    .ProjectVideo {
+      width: 100%;
+    }
+
+    .ProjectVideo iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* =========================
+       IMAGE GALLERY
+    ========================= */
+
+    .ProjectImages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ProjectImages img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .ProjectImages img.extrasmall {
+      width: 20%;
+      justify-self: center;
+    }
+
+    .ProjectImages img.small {
+      width: 40%;
+      justify-self: center;
+    }
+
+    .ProjectImages img.medium {
+      width: 60%;
+      justify-self: center;
+    }
+
+    .ProjectImages img.large {
+      width: 80%;
+      justify-self: center;
+    }
+
+    /* =========================
+       MOBILE MENU OFFSET
+    ========================= */
+
+    @media (max-width: 768px) {
+      body {
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+        background-attachment: scroll;
+      }
+
+      .Page {
+        padding: calc(var(--handle-height) + 20px) 20px 40px;
+      }
+
+      .TextTable {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .TextTable {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="Page">
+
+  <!-- TILE -->
+  <div class="ProjectTitle">
+    <h1>About Me</h1>
+  </div>
+
+  <!-- PARAGRAPH 1 -->
+  <p>
+    Hello! My name is Enkel. I am a Gameplay and Technical Designer who is graduating from the University of 
+    Staffordshire with a degree in Gameplay Design and Production.<br>
+    I have a passion for video games both playing and making them. I enjoy the designing and implementation of 
+    complex, in depth systems and mechanics.
+  </p>
+
+  <!-- PARAGRAPH 2 -->
+  <p>
+    My focus is on designing and building modular gameplay systems to allow for efficient development. I enjoy taking
+    designs from initial concepts to advanced implementation, including but not limited to combat mechanics,
+    progression systems and player abilities.<br>
+    I have spent the last 3 years honing my skills in Unreal Engine 5 and am wanting to branch out to other engines.
+    As a Technical Designer, I aspire to learn as many programming languages as I can to ensure that I can work
+    in many environments in order to create prototypes and implement designs as efficiently as possible.
+  </p>
+
+  <!-- PARAGRAPH 3 -->
+  <p>
+    During my time at University, I have worked on various projects, both in solo and group settings, making games
+    of various genres and as I begin my career in the games industry, I am eager to contribute to projects that create 
+    engaging and memorable experiences for players whilst growing as both a designer and developer.
+  </p>
+</div>
+
+<!-- MENU -->
+<div id="menu-container"></div>
+<script src="menu.js"></script>
+
+</body>
 </html>
