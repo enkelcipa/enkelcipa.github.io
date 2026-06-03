@@ -114,6 +114,13 @@
         .ProjectVideo {
             width: 100%;
         }
+        
+        .ProjectVideo iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: none;
+            border-radius: 12px;
+        }
 
         .ProjectVideo video {
             width: 100%;
@@ -219,11 +226,11 @@
 
     <!-- GAMEPLAY VIDEO -->
     <div class="ProjectVideo">
-        <video autoplay muted loop controls>
-            <source src="Hexpansion/" type="video/mp4">
-        </video>
+        <iframe
+                src="https://www.youtube.com/embed/r0sM9RvmyLg?autoplay=1&mute=1"
+                allowfullscreen>
+        </iframe>
     </div>
-
 
     <!-- PARAGRAPH 2 -->
     <h1>Procedurally Generated Map</h1>
