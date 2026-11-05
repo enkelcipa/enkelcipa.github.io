@@ -6,12 +6,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="menu.css">
     <style>
-        :root {
-            --hex-size: clamp(70px, 10vw, 140px);
-            --hex-gap: clamp(8px, 1.5vw, 18px);
-            --handle-height: 70px;
-        }
-
         /* FONT ONLY (menu handles global text now) */
         @font-face {
             font-family: "UD Digi Kyokasho";
@@ -40,6 +34,24 @@
 
         body.menu-open {
             overflow: hidden;
+        }
+		
+		/* =========================
+           PAGE CONTAINER
+        ========================= */
+
+        .Page {
+            width: 100%;
+            max-width: 900px;
+            padding: 80px 20px 60px;
+            box-sizing: border-box;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 28px;
+            text-align: center;
         }
 
         /* =========================
@@ -147,6 +159,7 @@
     </style>
 </head>
 <body>
+
 <!-- PAGE CONTENT -->
 <div class="CenterPiece">
     <div class="Name">Enkel Cipa</div>
@@ -155,9 +168,10 @@
         Technical Designer
     </div>
 </div>
-<!-- REUSABLE MENU MOUNT POINT -->
+
+<!-- MENU -->
 <div id="menu-container"></div>
-<!-- MENU SYSTEM SCRIPT -->
 <script src="menu.js"></script>
 </body>
+
 </html>
